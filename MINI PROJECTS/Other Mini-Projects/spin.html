@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin</title>
+    <style>
+        html{
+            background: url('ee.jpg') no-repeat center center/cover;
+            opacity: 0.9;
+            /* border: black 1px solid; */
+        }
+
+        .cont img{
+            width:800px;
+            height:800px;
+            /* border: 3px solid red; */
+            border-radius: 400px;
+            box-shadow: 6px 6 px 40px black;
+        }
+        
+
+        .cont img:hover{
+            transition: all 10s ease-in-out 0.5s ;
+            transform: rotate(3600deg);
+            box-shadow: 1px 1px 15px black;
+        }
+        
+
+        .cont{
+            width  : 2500px;
+            height: 1000px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 20px black;        
+        }
+
+
+        .arrow{
+            width: 123px;
+            height: 105px;
+            position: absolute;
+            top: 62px;
+            left: 1210px;
+            font-size: 19rem;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(180deg);
+            color: rgb(199, 116, 199);
+            text-shadow: 2px 2px 20px black;    
+        }
+
+        .inventry img{
+            width: 584px;
+            height: 1096px;
+            box-shadow: 6px 6px 40px black;
+        }
+
+        .inventry 
+        {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+           
+            width: 230px;
+            height: 320px;
+
+            position: absolute;
+            bottom: 920px;
+            right: 400px;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <img src="6.png" alt="">
+    </div>
+
+    <div class="arrow">
+        &#9652;
+    </div>
+
+    <div class="inventry">
+        <img src="crp.jpg" alt=" ">
+    </div>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+footer{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+nav .searchBar #searchBarMain{
+    color: var(--textColor);
+    font-size: 1.1rem;  
+    font-weight: lighter;
+}
+
+
+:root{
+    --notResponsiveButContentKeepsOnCenter: repeat(8, auto);
+}
+
+
+@media (min-width: 1860px ) and (min-width:1706px )
+{
+    main .gridContainer{
+        margin: 40px 0px 0px 0px;
+        padding: 40px 0px 0px 0px;
+        display: grid;
+        
+        grid-template-columns: var(--notResponsiveButContentKeepsOnCenter);
+        justify-content: center;
+        grid-gap: 65px 65px;
+    } 
+}

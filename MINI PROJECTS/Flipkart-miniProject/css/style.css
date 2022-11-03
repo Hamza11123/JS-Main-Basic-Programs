@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+:root{
+    --backgroundColor : #2874f0;
+    --mainColor: white;
+    --textColor: rgb(99, 98, 98);
+    --resposiveGridPropertyButDoesNotCenter: repeat(auto-fill, minmax(100px, auto));
+    --notResponsiveButContentKeepsOnCenter: repeat(8, auto);
+}
+*{
+    font-family: 'Lato', sans-serif;
+    color:rgb(235, 235, 235);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+/* --------------------------- Header Styling... ------------------------*/
+header{
+    /* height: 56px; */
+    background-color:var(--backgroundColor);
+}
+header nav  {
+    display: flex;
+}
+
+header nav .logo{
+    display: flex;
+    align-items: center;
+    padding: 0px 18px;
+}
+header nav .logo img{
+    width: 88px;
+}
+
+header nav ul  {
+    height: 56px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+header nav ul li{
+    list-style: none;
+    padding: 0px 10px;
+}
+header nav ul li a{
+    padding: 2px 20px;
+    text-decoration: none;
+}
+
+/* --------------------------- Main Styling... ------------------------*/
+main .container{
+    min-height: calc(100vh - 56px - 12vh);  /* Learnt That Technique From The Experience! (--> Important One) */
+
+    
+}
+nav .searchBar{
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    margin: 0px 10px;
+}
+nav .searchBar #searchBarMain{
+    width: 626px;
+    height: 38px;
+    border-radius: 3px;
+    margin: 0px 26px;
+    border: none;
+    padding: 0px 12px   ;
+}
+main .container .slider{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 25px 0px 100px 0px;
+}
+main .container .slider img{
+    width: 1450px;
+    height: 400px
+}
+
+
+
+ main .gridContainer{
+    margin: 40px 100px 160px 100px;
+    padding: 40px 0px 0px 0px;
+    display: grid;
+    grid-template-columns: var(--resposiveGridPropertyButDoesNotCenter);
+    justify-content: center;
+    grid-gap: 90px;
+} 
+main .gridContainer .gridChild{                      /* it shouldn't Repeat Again!! */
+    
+    display: flex;   
+    flex-flow: column nowrap;
+    align-items: center;
+    /* border: 2px solid rgba(68, 237, 16, 0.31); */
+    padding: 20px;
+    /* border-radius: 4px; */
+}
+main .gridContainer .gridChild img{
+    cursor: pointer;
+    box-shadow: .1px .1px 16px rgba(93, 149, 209, 0.2);
+    width: 140px;
+    height: 180px;
+} 
+
+main .gridContainer .gridChild p{
+    cursor: pointer;
+    text-align: center;
+    color: var(--textColor);
+    margin: 10px;
+    padding: 10px;
+    font-weight: lighter;
+    
+}
+main .gridContainer .gridChild .btn
+{
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    font-weight: lighter;
+    font-size: 1rem;
+    background-color: #2875f007;
+    color:var(--backgroundColor);
+    height: 42px;
+    width: 118px;
+    border: 1px solid );
+    /* background-color: white; */
+    border-radius: 2px;
+}
+
+/*---------------------Hover Effects Utiles-------------------------*/
+
+hr{
+    color: #99abc752;
+}
+main .gridContainer .gridChild .btn:hover {
+        /* font-weight: bolder; */
+        font-size: 1.1rem;
+        transition: all 0.2s;
+        color: white;
+        background-color: var(--backgroundColor);
+        border: 1px solid var(--backgroundColor);
+        border-radius: 4px;
+    }
+main .gridContainer .gridChild .btn:not(:hover ){
+        /* font-weight: bolder; */
+        transition: all 0.3s;
+        color: white;
+        /* background-color: white; */
+    border: 1px solid var(--backgroundColor);
+    color: var(--backgroundColor);    
+}
+main .gridContainer .gridChild:hover{
+    
+}
+
+
+/* ------------------------------------ Footer Styling... -------------------------------*/
+footer{
+    height: 12vh; 
+    background-color: var(--backgroundColor);
+}
