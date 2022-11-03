@@ -1,0 +1,17 @@
+{
+  "name": "express8",
+  "version": "1.0.0",
+  "description": "first express app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "excited"
+  ],
+  "author": "Hamza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

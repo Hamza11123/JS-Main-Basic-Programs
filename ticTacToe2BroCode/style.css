@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+.cell {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: 3.2rem;
+}
+
+.center {
+    text-align: center;
+}
+
+#cellContainer {
+    width: 12rem;
+    height: 12rem;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    margin: auto;
+}
+
+
+/*-------- Utility Classes to Remove One-Side-Border ---------*/
+.removeLeftBorder {
+    border-left: none;
+}
+
+.removeRightBorder {
+    border-right: none;
+}
+
+.removeTopBorder {
+    border-top: none;
+}
+
+.removeBottomBorder {
+    border-bottom: none;
+}
+
+/*-------- Utility Classes to Remove One-Side-Border ---------*/

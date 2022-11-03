@@ -1,0 +1,573 @@
+/*============== 7-2-2022 ==============*/ 
+@import url('https://fonts.googleapis.com/css?family=Poppins:200, 300, 400, 500, 600, 700, 800, 900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.banner p{
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #111;
+}
+
+
+ /* Element-Section: [2nd-Child]-Of-Body*/
+.banner{       
+    position: relative;
+    width: 100%;
+    min-height: 100vh;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('bg.jpg');
+    background-size: cover;
+    /* border: 2px solid green; */
+    /* opacity: 0.84; */
+}
+
+/* Element-Div: 1st-Child Of [Section.banner] */
+.banner .content {
+    /* border: 2px solid red; */
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Element-h2: 1st-Child Of div.content */
+.banner .content h2{
+    font-size: 5rem;
+    color: #fff;
+}
+.banner .content p{
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Element-a: 3rd-Child Of [Section] Element */
+.btn{
+    font-size: 1rem;
+    color: #fff;
+    background: #bd0542;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition:  0.5s;
+    border-radius: 2px;
+}
+
+/* Special Main-Button [Ancor-tag]  */
+.btn:hover{ 
+   background: #b1033de2;
+}
+
+/*---------------------------- NAV-BAR-STYLING -----------------------*/
+header {
+    transition: all 0.6s;
+    padding: 2rem 5rem;
+    
+    /*---- Position Shouldn't B Static(Deffault) Whenever V Want Z-index To WORK! ----*/
+    position: fixed;  
+    top:0px;    /* Top & Left Is "Zero" To Start Off With (Top-Left), SoThat It can Occupy The Full Width From [Top-Left To Top-Right]*/
+    left:0px;
+    width: 100%;
+    /*---- Zindex Is High To Put The Elements Of the "Header" Container On The TOP! ----*/
+    z-index: 9; 
+    
+    display:flex; /* Initializin' The Element As A [FLex-Box]*/
+    justify-content: space-between; /* Create an Empty Space Between Its Own-Childs */
+}
+/*---------------------------- NAV-BAR-STYLING -----------------------*/
+
+
+/* Element-a: 1st-Child Of [Header] */
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 3em;
+    text-decoration: none;
+}
+
+/* Element-span: OnlyOne-Child of [a] */
+header .logo span {
+    color: #ff0157;
+}
+
+
+/* Element-ul: 2nd-Child Of [header] */
+header .navigation {
+    position: relative;
+    display: flex;
+}
+
+/* Elmente-li: Children of [Ul] */
+header .navigation li {
+    list-style: none;    
+    margin: auto 8px;
+    padding: 4px 8px;    
+}
+
+/* Element-a: children of [li's] */
+header .navigation li a {
+    text-decoration: none;
+    color: rgb(242, 219, 219);
+    font-size: 1.01rem;
+}
+
+/*--------------------------- Transition And Hover-Effects ------------------------------*/
+header .navigation li a:hover{
+    transition: all 0.5s;
+    color: #f96999fa;
+    border-bottom: 1px solid #f9699995;
+
+}
+
+header .navigation li a:not(:hover){
+    transition: all 0.5s;
+}
+/*--------------------------- Transition And Hover-Effects ------------------------------*/
+/* Will continue... From Here 9:01 */
+
+
+
+/*============== 8-2-2022 ==============*/ 
+/*------------------------------ The Class ".stickNavBar" Will Be Added With JS "iF THE USER SCROLLS"-----------------------------*/
+
+/* Element-[header], A Class Of [Header]-Element, If We Scroll Down, It'll Add The "Class Dynamically With JS"; */
+.stickyNavBar{
+    padding: 2rem 5rem;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 1);
+    padding: 10px 100px;
+    box-shadow: 0px 5px  20px  rgba(0, 0, 0, 0.07);  /* BackGround is [TransParent-White] */
+}
+
+
+/* When The Class (.stickyNavBar) Exits, Then Hyper-Links Should B Black */
+.stickyNavBar .navigation li a{
+    color:  black;    
+}
+
+/* And Also The Logo Should B Black, Cuz Of [White-BackGRound] */
+.stickyNavBar .logo{
+    color:  black;
+    font-weight: 700;
+    font-size: 3em;
+    text-decoration: none;
+}
+/*------------------------------ The Class ".stickNavBar" Will Be Added With JS -----------------------------*/
+
+
+
+
+/*--------------------------------------------- [About-SECTION] ---------------------------------------------------*/
+
+section {           /* Boht Ghoor Karny Wali "TECHNIQUE" H... */ 
+    padding: 100px; /* Really Important To "KEEP THE WebSITE-BALANCE"; All SEctions Have Same (Padding-Spacing)  */
+}
+
+.about .row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about .row .col50{
+    position: relative;
+    width: 48%;
+
+}
+/* this styling From Myside */
+/* .about .row .col50 img{ 
+    width:44.4rem
+} */
+/*============== 10-2-2022 ==============*/ 
+
+/*-------- Styling the h2 Heading Of Every Section--------*/ 
+.about .row .col50 .titleTextAboutSection, .titleTextMenuSection, .titleTextExpertSection, .titleTextTestimonialsSection, .titleTextContactSection{
+    color: #111;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/*-------- STyling The [Span] Character Of Every Section --------*/
+.about .row .col50 .titleTextAboutSection span, .titleTextMenuSection span, .titleTextExpertSection span, .titleTextTestimonialsSection span, .titleTextContactSection span{
+    color:rgb(222, 31, 63);
+    font-size: 3.2rem;
+}
+
+.about .row .col50 .imgBox{
+    position: relative;
+    width: 100%; /*----- It's Quite HELPFul To Use Percentage Unit, When It Comes To ResponsiveNess -------*/
+    height: 300px;
+    /* border: 2px solid red; */
+}
+
+.about .row .col50 .imgBox img{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    /* Increases Responsiveness Alot, Using Percentage-Unit */
+    width: 100%;  /*---- Really Important, Not To [FIX The SIZE Of IMG-TAG], We'll Use "(Percentage-Unit) To Keep The SIZE [[Variable]]" -----*/
+    height:100%;  /*----- Now, The SIZE Of IMG TAG Will Be EQUAL TO The SizeOf The .imgBox-Tag(div) ------*/
+    object-fit:cover;
+}
+/*--------------------------------------------- [About-SECTION] ---------------------------------------------------*/
+
+
+
+/*--------------------------------------------- [Menu-SECTION] ---------------------------------------------------*/
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu .content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /*-- It Should B Row-Reverse But I Wrote "row" For Experiment --*/
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.menu .content .box{
+
+    width: 340px;
+    margin: 20px;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 35px  rgba(0, 0, 0, 0.098);
+}
+.menu .content .box .imgBox{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.menu .content .box .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu .content .box .text{
+    text-align: center;
+    padding: 15px 0 5px;
+}
+
+.menu .content .box .text h3{
+    font-weight: 400;
+    color: #111;
+}
+/*--------------------------------------------- [Menu-SECTION] ---------------------------------------------------*/
+
+
+
+/*--------------------------------------------- [Expert-SECTION] ---------------------------------------------------*/
+.expert .content{
+    display:  flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.expert .content .box{
+    width: 250px;
+    margin: 15px;
+    border: 15px solid rgb(255, 255, 255);
+    box-shadow: 0 5px 35px  rgba(0, 0, 0, 0.098);
+}
+
+.expert .content .box .imgBox{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+}
+
+
+.expert .content .box .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.expert .content .box .text{
+    text-align: center;
+    padding: 15px 0 5px;
+}
+
+.expert .content .box .text h3{
+    font-weight: 400;
+    color: #111;
+}
+/*--------------------------------------------- [Expert-SECTION] ---------------------------------------------------*/
+
+
+/*--------------------------------------------- [testimonials-SECTION] ---------------------------------------------------*/
+.testimonials{
+    background: url('bg2.jpg');
+    background-size: cover;
+}
+
+.white .titleTextTestimonialsSection, .white p{
+    color: #fff;
+}
+
+.testimonials .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap     ;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.testimonials .content .box{
+    width: 340px;
+    margin: 20px;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.testimonials .content .box .imgBox{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.testimonials .content .box .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonials .content .box .text{
+    text-align: center;
+}
+
+.testimonials .content .box .text p{
+    color:#666;
+}
+.testimonials .content .box .text h3{
+    margin-top: 20px;
+    color: #111;
+    font-size: 1rem;
+    color: #b1003bef;
+    font-weight: 600;
+}
+
+/*--------------------------------------------- [testimonials-SECTION] ---------------------------------------------------*/
+
+
+
+
+/*--------------------------------------------- [contact-SECTION] ---------------------------------------------------*/
+
+.contact{
+    background: url('bg3.jpg');
+    background-size: cover;
+}
+
+.contact .contactForm{
+    padding: 75px 60px;
+    background: #fff;
+    box-shadow: 0 15px  50px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin-top: 50px;
+}
+
+.contact .contactForm h3{
+    color: #111;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.contact .contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact .contactForm .inputBox input, 
+.contact .contactForm .inputBox textarea {
+    /* position: relative; */
+    resize: none;
+    width: 100%;
+    border: 1px solid rgb(130, 129, 129);
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.contact .contactForm .inputBox input[type = "submit"]{
+    font-size: 1rem;
+    color: #fff;
+    background: #bd0542;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.5s;
+    max-width: 100px;
+    font-weight: 500;
+    border: none;
+}
+
+.WebFooter{
+    padding: 8px 40px;
+    border-top: 1px solid rgb(231, 231, 231);
+    box-shadow: 0 5px 20px rgba(179, 179, 179, 0.491);
+    text-align: center;
+    
+}
+
+.WebFooter p{
+    color: rgb(104, 104, 104);
+}
+
+.WebFooter p a{
+    color:#ff0157;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+}
+/*--------------------------------------------- [contact-SECTION] ---------------------------------------------------*/
+
+
+/*-------------- MEDIA QUERRY --------------*/
+@media (max-width:991px) {
+
+    header, .stickyNavBar{
+        padding: 10px 20px;
+
+    }
+
+    header .navigation{
+        display:  none;
+        color: black;
+    }
+
+    header .navigation.active{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        /* Some [Upper-Part] Is [Uncovered] FRom The Page, To Visible The "TOGGLE-BUTTON";*/
+        top: 90px;
+        left: 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background:#fff;
+    }
+
+    header .navigation li{
+        color: #111;
+        margin: 5px 0px 56px 0px;
+    }
+
+    header .navigation li a{
+        text-decoration: none;
+        font-size: 1.6rem;
+    }
+    .toggleBar{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        background-position: center;
+
+    }
+    .toggleBar.active{
+        background: url(close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        background-position: center;
+    }
+
+    header.stickyNavBar .toggleBar{
+        filter: invert(1);
+    }
+
+    .banner .content h2{
+        font-size: 3em;
+        color: #fff;
+    }
+
+    /*-------- [About Section] ROW -------------*/
+    .row{   
+        flex-direction: column;     /* Converting To Column, For (Phone's View)*/
+    }
+
+    .row .col50{
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .row  .col50 .imgBox{
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .menu .content{
+        margin-top: 20px;
+
+    }
+
+    .menu .content .box .imgBox{
+        position: relative;
+        width: 100%;
+        height: 260px;
+    }
+    
+    .title{
+        text-align: center;
+    }
+    .titleTextAboutSection, .titleTextContactSection, .titleTextExpertSection, .titleTextMenuSection, .titleTextTestimonialsSection{
+        color: #111;
+        margin-bottom:15px ;
+        text-align: center;
+    }   
+
+}
+/*-------------- MEDIA-QUERRY --------------*/
+
+
+

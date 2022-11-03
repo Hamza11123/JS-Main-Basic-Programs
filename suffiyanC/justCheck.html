@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>just checking </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: black;
+            color: wheat;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+        }
+
+
+        div{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(209, 255, 209);
+            margin: auto;
+            transition: all 0.6s;
+            box-shadow: 0px 5px 20px 5px rgb(92, 205, 92);
+            border-bottom-left-radius: 100%;
+            transform: rotate(10deg);
+        }
+        
+        .togglee{
+            transform: rotate(0deg);
+            background: rgb(255, 255, 209);
+            box-shadow: 0px 5px 20px 5px  rgb(234, 234, 166);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        let div = document.getElementsByTagName('div')[0];
+        div.classList.add('c1')
+        div.classList.add('c2')
+        div.classList.add('c3')
+        div.addEventListener('click', ()=>{
+           console.log('toggle returned value' ,div.classList.toggle('togglee'));
+            console.log(div.classList)
+        });
+        console.log(div.classList)
+    </script>
+</body>
+</html>

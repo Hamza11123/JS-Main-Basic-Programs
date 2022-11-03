@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive navBar</title>
+    <style>
+        *{
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul{
+            display: none;
+            gap: 2rem;
+            border: 2px solid black;
+            
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid black;
+            margin: 2rem;
+            
+        }
+
+        .responsiveNavigation{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+        button{
+            margin-left: auto;
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="">
+            <li class="menu"><a href="#">Home1</a></li>
+            <li class="menu"><a href="#">Boxs2</a></li>
+            <li class="menu"><a href="#">Boxs3</a></li>
+            <li class="menu"><a href="#">Boxs4</a></li>
+        </ul>
+
+        <button class="menu">Menu</button>
+
+    </nav>
+</body>
+
+    <script>
+        // Accessing all elements those have ".menu" named class
+        let menu = document.getElementsByClassName("menu");
+
+        // Accessing the ul
+        let ul = document.getElementsByTagName("ul")[0];
+
+
+        // iterating all the elements who got ".menu" named Class
+        Array.from(menu).forEach(element => {
+
+            // if Event is Fired then Remove/Add ".responsiveNavigation" named "Class"
+            element.addEventListener('click', ()=>{
+                ul.classList.toggle('responsiveNavigation');
+            })
+        });
+        
+    </script>
+</html>

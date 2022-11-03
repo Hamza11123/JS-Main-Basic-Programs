@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero necessitatibus facilis aliquid, quos tenetur pariatur minus. Iusto itaque incidunt non!</div>
+    <input type="text" id="txt">
+    <input type="text" id="txt2">
+</body>
+<script>
+    /*--------------- Functions-Definitions ----------------*/
+    function getTypedWordFromDomForMatch(givenIndex){
+        let strArray = [], strArray2 = [];
+        for(let i= givenIndex-1;1; --i){
+            if(toBeTypedString[i] == ' ' || toBeTypedString[i] == undefined)
+            break;
+            strArray.push(toBeTypedString[i]);
+        }
+        
+        // Reversing The [Array-Elements] By Using The [Stack's-Logic]..
+        for (let i = 0; i < (strArray.length + 4); i++) 
+            strArray2.push(strArray.pop());    
+        return (strArray2);
+    }
+    const getLastIndex = str => str[--(str.length)];
+    /*--------------- Functions-Definitions ----------------*/
+    
+    /*--------------- Variables-Section----------------*/
+    const inp = document.getElementById('txt');
+    const inp2 = document.getElementById('txt2');
+    const textCont = document.getElementsByClassName('content')[0];
+    let toBeTypedString = textCont.textContent;
+    let indexPointer = 0;
+    /*--------------- Variables-Section----------------*/
+
+    
+
+    
+    // Handling 'input' Handling
+    inp.addEventListener('input', function(e){
+        console.clear();
+        // TRACKING Last-character on Typing Each-Character (STILL-CHARACTER)
+        console.log('typed char\b', getLastIndex(e.target.value));
+
+        // Getting The [Each-Character] To Compare With The [Last-Entered-Character] By User through input-Tag!
+        console.log('tobetypedSTR', toBeTypedString[indexPointer]);
+
+        if(toBeTypedString[indexPointer] == getLastIndex(e.target.value)){
+            console.log('right');
+        }
+        if(getLastIndex(e.target.value) == ' '){
+            console.log(e.target.value);
+            // if user Doesn't Type a [complete-Word] then The (toBeTypedString's) index-pointer(indexPointer) Will automatically "REACH" At The [END-OF-THE-WORD]
+            for(let i= indexPointer; 1; i++){   
+                if(toBeTypedString[i] == ' '){
+                    console.log('tobeTypeD-pointer here', toBeTypedString[i], i);   
+                    indexPointer = i;
+                    break;
+                }
+            }
+            console.log(getTypedWordFromDomForMatch(indexPointer), toBeTypedString[indexPointer], indexPointer);
+            e.target.value = '';   
+
+        }
+
+        // increament the Character-Pointer of The 'toBeTypedString'(from DOM)..
+        indexPointer++;
+    });
+</script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(70, 169, 245);
+            color: rgb(232, 232, 232);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #canva{
+            display: flex;              
+            flex-wrap: wrap;
+
+            gap: 0.4rem;
+
+            height: 25rem;
+            width: 28rem;
+            margin: 0 auto;
+            
+        }
+        .childOfCanva{
+            height: 8rem;
+            width: 8rem;
+            /* border: 1px solid white; */
+            font-size: 7rem;
+            background: rgb(232, 242, 249);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            vertical-align: center;
+        }  
+        .childOfCanva:hover{
+            transition: all 0.4s;
+            background: rgb(189, 218, 242);
+            animation: font 0.4s static  infinite forwards ;
+        }
+        .childOfCanva:active{
+            background-color: rgba(153, 211, 255, 0.92);
+            box-shadow: 0 4px 20px rgba(86, 86, 86, 0.461);
+        }
+        .childOfCanva:focus{
+            background-color: rgb(0, 0, 0);
+        }
+        .childOfCanva:not(:hover){
+            transition: all 0.4s;
+        }
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tae Toe Game</title>
+</head>
+<body>
+    <h1>Result: <span></span></h1>
+    <div id="canva">
+
+    </div>
+</body>
+<script>    
+    
+    function playAudio(){
+        const audioObj = new Audio('kar 98.mp3');
+        audioObj.play();
+    }
+
+
+    // Accessing the Main-Parent-board & Assigning to a Variable in 'canva' named [variable]
+    let canva = document.getElementById("canva");
+
+    // creating an array to store dynamic Elements with position
+    let child_Elemnets = [];
+    
+
+
+    for (let i = 0; i <= 8; i++) {
+        // creating and storing each element in the array [child_Elements] named "Array";
+        child_Elemnets[i] = document.createElement('div');
+        
+        // setting each Element's Attribute 
+        child_Elemnets[i].setAttribute('id',i);
+        child_Elemnets[i].setAttribute('class','childOfCanva');
+        child_Elemnets[i].setAttribute('onclick','playAudio()');
+
+        // Appending each element in "#canva" the Parent!
+        canva.appendChild(child_Elemnets[i]);
+    }
+
+    
+
+    // traversin' the whole [Array] with forEach
+    child_Elemnets.forEach(element => {
+        // console.log('this is', check);
+        element.addEventListener('click', remEventListner); 
+    });
+
+    let turn = 0;   // this will "Decide" the turn Between [Two-Users]
+
+    // function to remove event listner from a [particular-Elem];
+    function remEventListner(){
+        // Again, Accessing the "ChildsOfTheCanva" with their class '.childOfCanva'
+        // let elementByClass = document.getElementsByClassName('childOfCanva');
+
+        /*------- Styling with CSS ----------*/
+        child_Elemnets[this.id].style.backgroundColor = ' rgba(78, 178, 255, 0.735)';
+        child_Elemnets[this.id].style.boxShadow = ' 0 4px 20px rgba(86, 86, 86, 0.461)';
+        /*------- Styling with CSS ----------*/
+        
+        child_Elemnets[this.id].innerHTML = (turn % 2 == 0) ? 'X': 'O';
+        child_Elemnets[this.id].removeEventListener('click', remEventListner);
+        turn++;
+
+
+        setTimeout(() => {
+            let winner; // winner would b 'X' or 'O';
+            winner = checkForMatch();
+            let span = document.getElementsByTagName('span')[0];
+            if(winner == 'X'){
+                span.innerHTML = `Congrats! '${winner}' Is The Winner :)`;
+                canva.innerHTML = '';
+            }
+            else if(winner == 'O'){
+                span.innerHTML = `Congrats! '${winner}' Is The Winner :)`;
+                canva.innerHTML = '';
+            }
+            else if(winner == -1){
+                span.innerHTML = "The match is Draw";
+                canva.innerHTML = '';
+            }
+        }, 1400);
+    }
+    const checkForMatch = () => {
+
+        // not a normal loop, as it's Varying In the [increasing-order] At the Rate Of '3' NOT '1'
+        for (let i = 0; i < 7; i+=3) {
+            
+            if(child_Elemnets[i].innerHTML == child_Elemnets[i+1].innerHTML && child_Elemnets[i+1].innerHTML == child_Elemnets[i+2].innerHTML){
+                
+                return child_Elemnets[i].innerHTML;
+            }
+        }
+        for(let i=0; i< 3; i++){
+
+            if(child_Elemnets[i].innerHTML == child_Elemnets[i+3].innerHTML && child_Elemnets[i+3].innerHTML == child_Elemnets[i+6].innerHTML){
+                
+                return child_Elemnets[i].innerHTML;
+            }
+        }
+        for(let i=0;i <= 2; i+=2){
+            if(child_Elemnets[i].innerHTML == child_Elemnets[4].innerHTML && child_Elemnets[4].innerHTML == child_Elemnets[8-i].innerHTML){
+
+                return child_Elemnets[i].innerHTML;
+            }
+        }
+        let checkForDraw  = true;
+        for (let i = 0; i < child_Elemnets.length; i++)
+            if(child_Elemnets[i].innerHTML == "") checkForDraw = false;
+        if(checkForDraw == true) return -1;
+    }
+
+</script>
+</html>

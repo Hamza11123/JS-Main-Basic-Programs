@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+section {
+    background: black;
+    color: white;
+}
+
+.navBar {
+    max-width: 66.4rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.6rem;
+}
+
+.cart {
+    position: relative;
+}
+
+.flag {
+    padding: 0.2rem;
+    position: absolute;
+    top: -32%;
+    left: 108%;
+    height: 76%;
+    background: red;
+    font-size: 92%;
+}

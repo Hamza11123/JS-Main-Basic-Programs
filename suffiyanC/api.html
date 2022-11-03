@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello   </h1>
+    <div id="map">
+
+    </div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhkX327h0JOI8Z5Fm6MsW6NdPSkxZnzcI&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+</body>
+
+<script>
+        // Selecting The #map Element
+        let mapCont = document.getElementById("map")
+        // Initialize and add the map
+        function initMap(XCord, YCord) {
+        // The location of Uluru
+        const uluru = { lat: 100, lng: 2 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(mapCont, {
+            zoom: 4,
+            center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+        });
+        }
+
+        // let X=0, Y=0;
+        // mapCont.addEventListener("click", (event_Obj)=>{
+        //     X =event_Obj.clientX, Y = event_Obj.clientY;
+        //     initMap(event_Obj.clientX, event_Obj.clientY);
+            
+        // });
+        // initMap(X, Y);
+
+        
+</script>
+</html>
+

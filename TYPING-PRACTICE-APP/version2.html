@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Version-2 (2nd-Logic)</title> <!--2nd Logic of the Typing App In js-->
+</head>
+<body>
+    <div id='textCont'>
+    </div>
+    <input type='text'  id='inp'>
+    <div id='status'>
+        Wrong-chars: <span></span>
+    </div>
+
+</body>
+<script>
+
+    /*------------------------ Variables-Section ------------------------*/
+    /*----------- Words ------------*/
+    let str = "he she I you we they name his her my your our their hamza's him her me you us to hamza here is what i think are I'm am there were so many repositories can cannot can't would wouldn't couldn't could won't will not person attracted usually people loose lost whatsapp chat chatting attracting react reaction based big company business youtube facebook chrome linked-in there're were so or index javaScript C++ ";
+    // Stores Words As An [Array-Of-Strings]
+    let Word = [], word_Ind=0;  // Here is its IndexPointer To "Traverse"
+    // Temp Word-Str Array
+    let Words2 = [];
+
+    /*----------- Words ------------*/
+
+
+    let textCont = document.getElementById('textCont');
+    let inp = document.getElementById('inp');
+    let Word_Ind=0, Char_Ind =0;
+
+    // Using 2D Arrays 1-Dimension for Element-Span & 2nd-One For Its Content In The Form Of [String]
+    let createdSpanArr = [[]] ;
+
+    let wrongChars=0, wrongWords=0;
+    /*------------------------ Variables-Section ------------------------*/
+
+    /*------------------------ Functions-Section ------------------------*/
+    function getRandom_Int(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+    const getLastIndex = str => str[--(str.length)];
+
+    const createSpanElems = numOfElms =>{
+
+        // 'i' [1st-Dimension], Helping Us To Store Each-Span-Element In The [Array]
+        for (let i = 0; i < numOfElms; i++){
+
+            // Creating & [injecting-WOrd] Per [Each-Span], SToring The Elements In The [createdSpanArr](Array)
+            createdSpanArr[i] = document.createElement('span');
+            createdSpanArr[i].textContent = get_RandomSubStr(str);
+            textCont.appendChild(createdSpanArr[i]);
+
+            // Storing Span's 'innerText' In The Form Of [Character-Array], 'j' for [2nd-Dimension] 'innerText'(Character-Array)
+            for(let j=0; j< createdSpanArr[i].textContent.length; j++)
+                createdSpanArr[i][j] = createdSpanArr[i].textContent[j];
+        }
+    }
+
+
+    const get_RandomSubStr = (givenStr)=>{
+        for(let i=0; i< givenStr.length; i++){
+
+            Words2.push(givenStr[i]);
+
+            if(givenStr[i] == ' '){
+                // Store The Previous-String In The [Word-Array]
+                Word[word_Ind] = Words2.join('');
+                word_Ind++;
+                Words2 = [];
+            }
+        }
+        return(Word[getRandom_Int(70, 0)]);
+    }
+    get_RandomSubStr(str)
+
+    /*------------------------ Functions-Section ------------------------*/
+
+
+
+    /*------------------------------------ Main-Section ---------------------------------*/
+    createSpanElems(40);
+    createdSpanArr[Word_Ind].style.background = '#cbe4f4b5';
+
+    inp.addEventListener('input', (e)=>{
+        
+        // [Word_Ind] Changes On-Pressing-Space-Bar, [Char_Ind] Changes On-Pressing-A-Character
+        if(getLastIndex(e.target.value) == createdSpanArr[Word_Ind][Char_Ind]){
+            
+            /*----- Right-Chars-Section -----*/
+            console.log('user:', getLastIndex(e.target.value), Word_Ind, 'Written:', createdSpanArr[Word_Ind][Char_Ind], Char_Ind, 'Right');
+            createdSpanArr[Word_Ind].style.background = '#a3e7a3';
+            Char_Ind++;
+        }else{
+            
+            /*----- Wrong-Chars-Section -----*/
+            createdSpanArr[Word_Ind].style.background = '#ff6565a3';
+            console.log('user:', getLastIndex(e.target.value), Word_Ind, 'Written:', createdSpanArr[Word_Ind][Char_Ind], Char_Ind, 'RONG', );
+
+            
+
+            // Counting Wrong Characters..
+            wrongChars++;
+            
+            // Now, dividing Them By '2', as Each Time The [Back-Space] Is Also Count!
+            document.getElementById('status').innerHTML = `Wrong-Words: <span>${Math.ceil(wrongChars/2)}</span>`
+        }
+        
+        if(getLastIndex(e.target.value) == ' '){
+            //  'SpanElem'    Span's 'innerText'
+            Word_Ind++, Char_Ind = 0;
+            
+            // clearing the [input-tag] after pressing-Space-Bar
+            e.target.value = ''
+                
+            // - changing color After Jumping To The Next-Span WhenEver User Press space-Bar
+            createdSpanArr[Word_Ind].style.background = '#cbe4f4b5';
+        }
+    });
+    
+    
+    /*------------------------------------ Main-Section ---------------------------------*/
+    
+    
+</script>
+</html>
