@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crawler with For loop</title>
+</head>
+<body>
+    <a href="Sum/Multiplay">wahBeteMoujKrdee</a><a href="wahSum">wahBeteMoujKrdee</a><a href="Multiplay">wahBeteMoujKrdee</a><a href="RattyMultiplay">wahBeteMoujKrdee</a><a href="YeahBoySupDivision">wahBeteMoujKrdee</a>
+</body>
+
+        <script>
+            let AnchorLinks = document.links;
+            let HTMl_convertedToArray = Array.from(AnchorLinks); // HTML_Collection_Converted_To_Array :) with The Help Of "Array.From(VarName)" :)
+            console.log(HTMl_convertedToArray);
+
+                        // Filtering The Links With-Respect-To-[Sub_Strings] in Href;
+                        
+            /////////////////////// By USING Traditional for-loop ////////////////////////
+            // for (let i = 0; i < HTMl_convertedToArray.length; i++) {
+            //     const element = HTMl_convertedToArray[i];
+            //     if (element.href.includes("Sum"))
+            //         console.log(element.href);
+            // }
+            /////////////////////// By USING Traditional for-loop ////////////////////////
+            
+            
+            /////////////////////// By USING New_For-Each Loop in Js ////////////////////////
+            // HTMl_convertedToArray.forEach(function(Element){
+            //     if(Element.href.includes("Sum"))
+            //         console.log(Element.href);
+            // });
+            /////////////////////// By USING New_For-Each Loop in Js ////////////////////////
+                
+        </script>
+</html>

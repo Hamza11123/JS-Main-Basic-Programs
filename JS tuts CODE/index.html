@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js-Type-Conversion and Coerrecion</title>
+    <style>
+        
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul{
+            width: 100vw;
+            height: 200px;
+            display: flex;
+            align-items: center;
+        }
+        ul li{
+            margin: 20px;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul id="navBar">
+        <li><a href="#" id="1" onclick="ff()">Boxs</a></li>
+        <li><a href="#">Boxs</a></li>
+        <li><a href="#">Boxs</a></li>
+        <li><a href="#">Boxs</a></li>
+        <li><a href="#">Boxs</a></li>
+
+    </ul>
+</nav>
+</body>
+
+<script>
+    // // Important Notes for "Type conversion And coerrecion"
+
+    // let Num1 = String("444");
+    // console.log(typeof Num1, Num1); // converting the number into String by using 'String()' Function; another way is to use 'toString()' Method;
+
+    // let String1 = Number("43434"); // converting the string into Number by using 'Number()' Function, another way is to use 'parseFloat()' and 'parseInt' Methods;
+    // console.log(typeof String1, String1)
+
+    function ff(){
+        let youtube;
+    youtube = document.getElementById('navBar');
+    youtube.style.flexFlow = "column nowrap"
+    youtube.style.alignItems = "center"
+}
+
+
+</script>
+</html>

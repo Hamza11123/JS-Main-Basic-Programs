@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body style="background-color: black;">
+    
+    
+    
+</body>
+        <script>
+
+
+
+            // Defining an object
+            let Book = { 
+                title:"Rich and poor dad",
+                price:2332.04,
+                bookId:"4434b9",
+
+                showData : ()=>{
+                    console.log("Book title is " + Book.title, "Book price is " + Book.price, "book title is " +Book.bookId);
+                }
+                
+
+                
+            }
+            /* -------- definining an Obj -------- */
+            
+            
+
+
+
+            // Defining a Constructor, and it's much different compare to C/C++ constructors
+            
+            // Remember: constructor can NEVER EVER RETURN Any-thing Just like C/C++
+            // whenEver we tries to return any Val from Constrctr, and print to console, We'll get Printed 'NaN' in Js!
+            function Constr(n1, n2) {
+                this.val1 = n1,                // member variables
+                this.val2 = n2,
+                
+                this.showSum = function () {   // function is defined in the constructor
+                    console.log(this.val1 + this.val2)
+                }
+            }
+            /* ------- definining a Constrtr -------- */
+            
+
+
+
+
+
+            let sum = new Constr(3, 4);  // accessing the constructor
+            // console.log(sum.showSum());
+            sum.showSum();
+
+            Book.showData();
+            
+            
+            
+            </script>
+</html>

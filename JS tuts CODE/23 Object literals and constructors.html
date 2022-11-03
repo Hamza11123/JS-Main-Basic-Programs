@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object literalls and constructors</title>
+</head>
+<body style="background-color: black;">
+    
+</body>
+
+    <script>
+
+        let EmployeeObj = {
+            name : "hamza",
+            father_name: "jawaid",
+            profession  : "Programmer",
+            Age: 19,
+            height: 5.2,
+
+            
+            /* ------------ First Syntax Of writing a function or Method in the Object -----*/
+            // showQualifications:()=>{     
+                
+            //     console.log(EmployeeObj.profession);
+            // }
+                
+
+            /* ------------ Second Syntax Of writing a function or Method in the Object -----*/
+            showQualifications :function(){
+                
+                console.log(EmployeeObj.profession);
+            }
+        }
+
+        function constructr(Name, carModel, carPrice){
+            
+            // declaring and initializing  the variables 
+            this.carName = Name;
+            this.carrPrice = carPrice;
+
+            // defining method / function in the constructor
+            this.showdata = function () {
+                console.log(this.carName, this.carrPrice);
+            }
+        }
+
+        // console.log(EmployeeObj);
+        // console.log(EmployeeObj.showQualifications());
+        let ObjectByconstructors = new constructr("maruthi", "554b09", 5550)    // declaring the constructinng...
+        ObjectByconstructors.showdata();
+    </script>
+
+</html>

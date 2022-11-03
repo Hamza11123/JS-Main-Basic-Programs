@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More On Event Listners</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            width: 100vh;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="cont" style="background-color: rgb(148, 148, 233); height: 70%; width: 100%;">
+        
+    </div>
+    
+</body>
+    <script>
+        let B = document.getElementsByTagName('body');
+
+            document.getElementsByTagName('body')[0].addEventListener('mousemove', function(E){
+
+            document.getElementsByTagName('body')[0].style.backgroundColor = ` rgb(${E.clientY}, ${E.clientX},  ${E.clientY + E.clientX})`;
+
+            });
+
+
+
+        // B[0].addEventListener('mousemove', function(EventObject){
+
+        //     B[0].style.backgroundColor = "black";
+        //     console.log("fire");
+        // });
+    </script>
+</html>
+

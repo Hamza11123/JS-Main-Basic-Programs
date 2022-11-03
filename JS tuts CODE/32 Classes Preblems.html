@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black"></body>
+  <script>
+    class Library {
+      constructor(givenBookList) {
+        this.bookList = givenBookList;
+      }
+      getBookList() {
+        for (let i = 0; i < this.bookList.length; i++) {
+          const element = this.bookList[i];
+
+          console.log(i + 1 + ":", element, "\n\n");
+        }
+      }
+
+      issueBook(BookName, user) {
+        for (let i = 0; i < this.bookList.length; i++) {
+          const element = this.bookList[i];
+          if (element == bookName) {
+            //write From here...
+          }
+        }
+      }
+      returnBook(bookName) {}
+    }
+
+    const lib1 = new Library([
+      "DemoBook1",
+      "DemoBook2",
+      "Demobook3",
+      "Demobook4",
+    ]);
+    lib1.getBookList();
+  </script>
+</html>
+
+<!-- create a class library and implementing the following:
+PROBLEM::
+constructor must take a booklist as an argument !!
+1. getBookList(); // Will show BookList
+2. issueBook(bookname, user); // Assign Book to User
+3. returnBook(bookName); // return book
+-->

@@ -1,0 +1,1 @@
+Demo_text From the File: hamza.txt, gettng the content by Performing 'GET' request; :)

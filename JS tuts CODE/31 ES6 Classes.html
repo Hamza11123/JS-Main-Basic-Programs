@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 Classes-Source-Code (Modern Way To Use OOPs in J.S.)</title>
+  </head>
+  <body></body>
+
+  <script>
+    ///////////////////////// Class-1 (Employee) ///////////////////////////
+
+    class Employee {
+      constructor(
+        givenExperience,
+        givenname,
+        givenage,
+        givenheight,
+        givensalary
+      ) {
+        this.Experience = givenExperience;
+        this.name = givenname;
+        this.age = givenage;
+        this.height = givenheight;
+        this.salary = givensalary;
+      }
+
+      instanceMemberFUnction() {
+        console.log(
+          "I can't be called with the My (OBJ) FRom this Class with DOT Operator"
+        );
+      }
+
+      static staticAddFunction_() {
+        console.log(
+          "I'm an static function, I CAN B CALLED WITH-OUT DOT OPERATOR, JUST LIKE A NORMAL FUNCTION :)"
+        );
+      }
+    }
+
+    /* --------------------------- Class-1 (Employee) ------------------------ */
+
+    ////////// Another [Class](Programmer), (It was INHERITED With the [class](Employee)) //////////
+
+    class Programmer extends Employee {
+      // first name is Derived Class and second one is, Where It Drived From!!
+      constructor(
+        givenExperience,
+        givenname,
+        givenage,
+        givenheight,
+        givensalary,
+        Personal_language
+      ) {
+        super(givenExperience, givenname, givenage, givenheight, givensalary); // Pass the Arguments of Previous' Parent-Class-(Employee) Constructor
+        this.language = Personal_language;
+      }
+
+      favourite_Lang() {
+        if (this.language == "python") console.log("\n\nPython Lover <3");
+        else console.log("\n\n\nNot Interested in Python :(");
+      }
+    }
+
+    /*------- Another [Class](Programmer), (It was INHERITED With the [class](Employee))--------*/
+
+    const Obj1_Using_Class = new Employee(
+      "14 Years",
+      "Hamza",
+      19,
+      "5.2inch",
+      100000
+    );
+
+    const Obj2UsingProgrammer_Class = new Programmer(
+      "14-Years",
+      "Harry",
+      19,
+      "5.2inch",
+      1000000,
+      "Django"
+    );
+
+    console.log(Obj2UsingProgrammer_Class.favourite_Lang());
+  </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date and time </title>
+</head>
+<body style="background-color: black;">
+    
+</body>
+
+    <script>
+        let today = new Date;                            // Today's Date would be Assigned
+        let otherDate = new Date("05-oct-2003 05:58:02") // first way to assign date to an Object;
+        otherDate =new Date("17 june 2003")              // Other Way to assign adte to an Object;
+        otherDate = new Date("6/17/ 2003")                // to Use Full Number Formate, Use mm/dd/yyyy
+
+        let methods_fromDateObjts;
+        methods_fromDateObjts = otherDate.getDate(); // returns date;
+        methods_fromDateObjts = otherDate.getDay(); // returns day; 0 for sunday, 1 for monday, 2 for tuesday, ... & on so on...
+
+        methods_fromDateObjts  = otherDate.getMilliseconds();
+        methods_fromDateObjts = otherDate.getTime();
+        methods_fromDateObjts = otherDate.getSeconds();
+        methods_fromDateObjts = otherDate.getMonth(); // again, 0 for jan, 1 for feb, & so on...
+
+        methods_fromDateObjts  = otherDate.setMonth(4);
+        methods_fromDateObjts  = otherDate.setDate(3);
+        methods_fromDateObjts  = otherDate.setFullYear(2002);
+        methods_fromDateObjts  = otherDate.setMinutes(3);
+        methods_fromDateObjts = otherDate.setSeconds(55);
+        methods_fromDateObjts = otherDate.setHours(2);
+        
+
+
+
+
+        
+
+        console.log(otherDate);
+    </script>
+
+</html>

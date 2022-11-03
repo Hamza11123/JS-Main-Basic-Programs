@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            height: 100%;
+        }
+    </style>
+    <title>Events and Event Listener</title>
+</head>
+<body style= "background-color:  black; color:  white;">
+
+
+    <span id="convert" style= "background-color: green;">
+        <div class="child" id="child1" >Boxs 1</div>
+        <div class="child" id="child2" >Boxs 2</div>
+        <div class="child" id="child3" >Boxs 3</div>
+        <div class="child" id="child4" >Boxs 4</div>
+        <div class="child" id="child5" >Boxs 5</div>
+    </span>
+    
+</body>
+
+    <script>
+        let spanVar = document.getElementById('convert');
+        let body = document.getElementsByTagName('body');
+        body[0].style.height = "90%";
+
+        spanVar.style.height = "50%";
+        // spanVar.style.height = "300px";
+        spanVar.style.cursor = "pointer"; 
+
+        spanVar.addEventListener("click", function(E    ){   // this 'E' Is the OBJECT, containing the "PROPERTIES" RELATED TO "EVENT"
+            console.log('you have clicked on the Span#convert container');
+
+            // console.log(E) // Variable(Object) Passing As An ARGUMENT In The Function  is containing Various Properties Related to the "Listened Event!"
+
+
+
+            
+            let containingVariableforEvent_SubObjects;
+
+            containingVariableforEvent_SubObjects = E.target; // Printing target Object on console
+
+            containingVariableforEvent_SubObjects = E.target.id; // Returns "ID" in the form of [STRING]!
+            containingVariableforEvent_SubObjects = E.target.className; // Rteurns "ClassName" in the form of [String]
+
+
+
+            /////////////////////////////////////////////////////////////////////////////////
+            containingVariableforEvent_SubObjects = E.clientX;  // Returns the Position Of the cursor On The "Browser-Window" With Respect to 'X-Axis';
+            containingVariableforEvent_SubObjects = E.clientY;  // Returns the Position Of the cursor On The "Browser-Window" With Respect to 'Y-Axis';
+
+            containingVariableforEvent_SubObjects = E.offsetX;  // Returns the Position Of the cursor On The "Element" With Respect to 'X-Axis';
+            containingVariableforEvent_SubObjects = E.offsetY;  // Returns the Position Of the cursor On The "Element" With Respect to 'Y-Axis';
+            //////////////////////////////////////////////////////////////////////////////////
+            location.href = '//codewithharry.com'; // Alternate Of [Anchor-Tag]... Something Thing Like That, We Can make Any Elemnet Clickable And Also V can Attach "Links" Just Like Our Old ANCOR TAG
+            // console.log(containingVariableforEvent_SubObjects);
+
+        });
+
+
+    </script>
+
+</html>
