@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+:root{
+  --mainColor:	rgb(135, 75, 255);--backColor: rgba(135, 75, 255, 0.129);
+}*{
+  font-family: 'Rajdhani', sans-serif;
+  padding: 0; margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}#Container{
+  margin: 0 auto; padding: 0.6rem 0.6rem 0.6rem 0.4rem;
+  max-width: 81.8rem;
+}#menu{
+  cursor: pointer;
+}
+body{
+  background: #e8e9f60d;
+
+}
+
+/*---- Header --------*/
+header{
+  padding: 0.74rem 0;
+  align-items: center;
+}
+#ProfilePic{
+  height: 2.4rem; width: 2.4rem;
+  border-radius: 50%;
+  cursor: pointer ;
+}#ProfilePic:active{
+  transition: all 0.2s;
+  border: rgb(119, 173, 255) 1px solid;
+}#profileSpecificContent{
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+}
+#logoutBtn{
+  display: none;
+  align-items: center;  gap: 1rem;
+  width: 8rem; height: 2.4rem;
+  position: relative;
+  top: 3rem; left: 9rem;
+  border-radius: 8px;
+  background: rgb(222, 222, 222);
+  box-shadow: 0 5px 20px 0 rgba(188, 188, 188, 0.487);
+  transition: all 0.2s;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+#logoutBtn:hover{
+  background: rgb(245, 245, 245);
+}
+#SidesCont .leftSide #DashCards{
+  gap: 1.2rem;
+}
+
+#SidesCont .leftSide #DashCards .card{
+  background: rgb(255, 255, 255);
+  box-shadow: 0 5px 60px 0 #0000002b;
+  width: 24.97rem; height: 13.2rem;
+  padding: 1.28rem;
+  border-radius: 26px;
+}
+#SidesCont .leftSide #DashCards .card .cardContent .bar{
+  padding: 0.16rem;
+  background: rgb(221, 221, 221);
+  position: relative;
+}
+#SidesCont .leftSide #DashCards .card .cardContent .bar::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.3rem;
+  background: var(--mainColor);
+  width: 90%;   
+}
+ /*-- Icons-St  yling --*/
+#SidesCont .leftSide #DashCards .card .icon{   
+  border-radius: 50%;
+  height: 2.6rem;
+  width: 2.6rem;
+  padding: 0.5rem;
+  background-color: var(--mainColor);
+  color: rgb(246, 246, 246);
+  margin-bottom: 1.2rem;
+}
+
+#SidesCont .leftSide #DashCards .card .cardContent .cardHeadnig{
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin: 0.6rem 0;
+}
+#SidesCont .leftSide #DashCards .card .cardContent {
+  margin-bottom: 1.24rem;
+}
+#SidesCont .leftSide #DashCards .card .cardContent .numericValue{
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  
+}
+#SidesCont .leftSide #DashCards .card  .updatedTime {
+  font-size: 0.7rem;
+}
+
+/*--- Table-Styling ---*/
+#Table{
+  background: rgb(255, 255, 255);
+  box-shadow: 0 5px 60px 0 #00000030;
+  border-radius: 26px;
+  padding:0.4rem;
+}
+#TableContainer{
+  margin-top: 1.8rem;
+}
+#TableContainer h2{
+  margin-bottom: .76rem;
+}
+#TableContainer h2{
+  font-size: 1.24rem;
+}
+.gridRow{
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+}
+#TableBody .gridRow:hover{
+  background: rgba(233, 233, 233, 0.339);
+}
+.gridColumn{
+  padding: 0.58rem 1rem;
+  font-size: 12px;
+  border-bottom:1px solid rgba(0, 0, 0, 0.078);
+  color: rgba(0, 0, 0, 0.7);
+}
+#TableHead{
+  /* place-items: center; */
+  font-weight: bolder;
+}
+
+#TableBody{
+  /* display: grid;
+  place-content: center; */
+  height: 17.2rem;
+  overflow-x: hidden;
+  overflow-y: auto;  
+}
+
+
+::-webkit-scrollbar{
+  width: 0.4em;
+}::-webkit-scrollbar-track{
+  background: rgb(232, 232, 232);
+  border-radius: 100vw;
+  margin-block: 1em;
+}::-webkit-scrollbar-thumb{
+  border-radius: 100vw;
+  background: rgb(201, 201, 201);
+}::-webkit-scrollbar-thumb:hover{
+  background: rgb(170, 170, 170);
+}
+
+
+/*---------- SIde-Bar -------------*/
+#sideBar{
+  transition: all 0.2s;
+  position: absolute;
+  background: rgb(255, 255, 255);
+  top: 0rem;  left: 0rem;
+  height: 110vh;  width: 0.2rem;
+  box-shadow: 0 5px 40px 0 rgba(147, 147, 147, 0.392);
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}#brandNameProfile{
+  width: 2rem; height: 2rem;
+  border: 1px solid rgb(185, 185, 185); border-radius: 50%;
+}#sideBar:hover{
+  /* width: 14rem; */
+}#sideBar #brandName{
+  display: flex;  align-items: center; gap: 1.2rem;
+
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 1.8rem 1rem 2.8rem 1rem;
+}#sideBar #Tabs .tab{
+  display: flex;  gap: 1.6rem;  align-items: center;
+  padding: 1.24rem 1rem;
+  cursor: pointer;
+}#sideBar #Tabs .tab:hover, #brandName:hover{
+  transition: all 0.2s;
+  background: var(--backColor);
+  color: var(--mainColor);
+}#sideBar #Tabs .tab .bx{
+  color: rgba(0, 0, 0, 0.349);
+}
+#sideBar #Tabs .tab a{
+  color: rgba(0, 0, 0, 0.645);
+  font-size: 1.16rem;
+  font-weight: 600;
+}
+#sideBar #Tabs{
+}
+/*---------- SIde-Bar -------------*/
+
+@media (max-width: 450px) {
+  #SidesCont .leftSide #DashCards .card{
+    width: 19.87rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- boxicons  -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- bootstrap  -->
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./utiles.css">
+  <script defer src="./script.js"></script>
+
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <main id="Container">
+
+    <header class="flexR spaceBetween">
+
+      <a id="Logo">
+        <h3 class="logoName">Hamza or IMG</h3>
+        <p class="otherContent">Details</p>
+      </a>
+
+
+      <div id="profileSpecificContent" class="flexR">
+        <button id="ToggleBtn">Tog</button>
+        <div id="AdminName">Hamza Shaikh</div>
+        <img id="ProfilePic" src="./dashBoardDesign.PNG" alt="">
+      </div>
+
+    </header>
+    
+    <div id="SidesCont" class="flexR flexWrap ">
+
+      <!-- Left Side  -->
+      <div class="leftSide">
+
+        <div id="DashCards" class="flexR justifyCenter flexWrap ">
+          <div class="card" id="card1">
+    
+            <div class="icon"><i class='bx bx-trending-up bx-sm'></i></div>
+    
+            <div class="cardContent">
+              <h4 class="cardHeadnig">Card-Heading</h4>
+              <h2 class="numericValue">$999..</h2>
+            </div>
+    
+            <!-- <div class="progressBar">Progress-Bar</div> -->
+            <p class="updatedTime">4 Hours ago</p>
+          </div>
+          <div class="card" id="card2">
+    
+            <div class="icon"><i class='bx bx-bar-chart-alt-2 bx-sm'></i></div>
+    
+            <div class="cardContent">
+              <h4 class="cardHeadnig">Card-Heading</h4>
+              <h2 class="numericValue">$999..</h2>
+            </div>
+    
+            <!-- <div class="progressBar">Progress-Bar</div> -->
+            <p class="updatedTime">4 Hours ago</p>
+          </div>
+          <div class="card" id="card3">
+    
+            <div class="icon"><i class='bx bxs-component bx-sm'></i></div>
+    
+            <div class="cardContent">
+              <h4 class="cardHeadnig">Card-Heading</h4>
+              <h2 class="numericValue">$999..</h2>
+            </div>
+    
+            <!-- <div class="progressBar">Progress-Bar</div> -->
+            <p class="updatedTime">4 Hours ago</p>
+          </div>
+          
+        </div>
+
+        <!-- Table-Cont  -->
+        
+        <div id="TableContainer">
+          <h2>Recent Orders</h2>
+          
+          
+          <div id="Table">  <!--FLex-Container-->
+
+            <div id="TableHead" class="gridRow">
+              <div class="gridColumn">S/no:</div>
+              <div class="gridColumn">User-Name:</div>
+              <div class="gridColumn">User-Email:</div>
+              <div class="gridColumn">Total-Earnings:</div>
+            </div>
+            
+            <div id="TableBody" class="">
+
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+              <div class="gridRow">
+                <div class="gridColumn">1</div>
+                <div class="gridColumn">Hamza Shaikh</div>
+                <div class="gridColumn">hs5924414@gmail.com</div>
+                <div class="gridColumn">Rs: 200</div>
+              </div>
+
+              
+
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+      
+      <!-- Right-Side  -->
+      <div class="rightSide">
+        <h3>Recent Updates</h3>
+        <div id="UpdateContainer">
+          <div class="notifications flexR">
+            <div class="clientProfile">
+              <img src="./dashBoardDesign.PNG" alt="">
+            </div>
+            <div class="notificationContent">
+              <span class="clientName">Lareb Ch</span>
+              <p class="clientUpdateMessage">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, soluta.
+              </p>
+            </div>
+
+          </div>
+          <div class="notifications flexR">
+            <div class="clientProfile">
+              <img src="./dashBoardDesign.PNG" alt="">
+            </div>
+            <div class="notificationContent">
+              <span class="clientName">Lareb Ch</span>
+              <p class="clientUpdateMessage">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, soluta.
+              </p>
+            </div>
+
+          </div>
+          <div class="notifications flexR">
+            <div class="clientProfile">
+              <img src="./dashBoardDesign.PNG" alt="">
+            </div>
+            <div class="notificationContent">
+              <span class="clientName">Lareb Ch</span>
+              <p class="clientUpdateMessage">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, soluta.
+              </p>
+            </div>
+
+          </div>
+          <div class="notifications flexR">
+            <div class="clientProfile">
+              <img src="./dashBoardDesign.PNG" alt="">
+            </div>
+            <div class="notificationContent">
+              <span class="clientName">Lareb Ch</span>
+              <p class="clientUpdateMessage">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, soluta.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="SellsAnalysisCont">
+          <h3>Sales Analytics</h3>
+  
+          <div id="Sells">
+  
+            <div class="sell flexR">
+              <div class="saleLogo"><i class='bx bxs-cart-alt bx-sm'></i></div>
+              <div class="content flexR">
+                <div class="sellHeading">
+                  <h4>New Customers</h4>
+                  <span class="updateTimeout">updateTimeout</span>
+                </div>
+                <span class="statsPercentage">+34%</span>
+                <span class="statsNumericValue">+343</span>
+              </div>
+            </div>
+            <div class="sell flexR">
+              <div class="saleLogo"><i class='bx bxs-shopping-bags bx-sm'></i></div>
+              <div class="content flexR">
+                <div class="sellHeading">
+                  <h4>New Customers</h4>
+                  <span class="updateTimeout">updateTimeout</span>
+                </div>
+                <span class="statsPercentage">+34%</span>
+                <span class="statsNumericValue">+343</span>
+              </div>
+            </div>
+            <div class="sell flexR">
+              <div class="saleLogo"><i class='bx bxs-user bx-sm'></i></div>
+              <div class="content flexR">
+                <div class="sellHeading">
+                  <h4>New Customers</h4>
+                  <span class="updateTimeout">24 Hours ago</span>
+                </div>
+                <span class="statsPercentage">+34%</span>
+                <span class="statsNumericValue">+343</span>
+              </div>
+            </div>
+
+          </div>
+
+          <button><i class='bx bxs-layer-plus bx-sm'></i> <span>Add Product</span></button>
+  
+        </div>
+
+
+
+
+      </div>
+    </div>
+    
+
+  </main>
+</body>
+
+</html>
