@@ -1,0 +1,77 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HTML5 Editable Elements</title>
+</head>
+<body>
+    <h1 contentEditable="true">Your Name</h1>
+    <div contentEditable="true">You Favorite Movie</div>
+    <p contentEditable="true">Your Comment</p>
+    <p><strong>Note:</strong> Click on the elements and type some text.</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <tit></tit le>
+</head>
+<body>
+    <div id="cont">
+
+
+        <h1>this is a heading !!</h1>
+
+        <div id="cont_content">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit exercitationem esse neque distinctio debitis earum omnis blanditiis tenetur molestiae. Quam quaerat commodi aliquam molestiae deserunt eligendi totam voluptates numquam ipsa.
+
+        </div>
+
+        <!-- <input type="text" name="" id=""> -->
+
+    </div>
+</body>
+        <!-- Challenge From CodeWithHarry: 
+            Exercise #2:-   
+                         Make A container and make it Editable and when we loose mouse It'll Save the data in Local storage  -->
+
+    <script>
+
+        let contSpan = document.getElementById('cont');
+        let conDiv = document.getElementById('cont_content')
+        
+        /* Applyning CsS Properties through J.S. */
+        
+        contSpan.style.border = "2px solid black";
+        contSpan.style.height = "400px";
+        contSpan.style.width = "800px";
+        
+        conDiv.style.border = "2px solid black";
+        conDiv.style.height = "300px";
+        conDiv.style.width = "600px";
+        conDiv.style.margin = "auto";
+        document.getElementsByTagName('h1')[0].style.width = "270px";
+        document.getElementsByTagName('h1')[0].style.margin = "auto";
+        
+        /* Applyning CsS Properties through J.S. */
+
+        conDiv.addEventListener('click', function(){
+            conDiv.contentEditable = "true";
+           
+        });
+        conDiv.addEventListener('mouseleave', function(){
+            conDiv.contentEditable = "false";  // HTMTL Attribute make the element "editable"
+            localStorage.setItem("UserEditableContent", conDiv.innerText);    
+        });
+        
+/* Important Note: we could solve the problem by using the tag "<textarea>...</textarea>" but with this tag we'll Use ".value" instead-Of method to get the [INNERTEXT]... that's it!*/
+        
+        </script>
+
+</html>

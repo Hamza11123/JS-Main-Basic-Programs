@@ -1,0 +1,56 @@
+<!-- Refference of the All Source Code related to type "conversion and coerecion":
+
+    Link: https://www.codewithharry.com/videos/javascript-tutorials-in-hindi-5-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // Type conversion 
+console.log('Welcome to tut5');
+let myVar;
+myVar = String(34);
+// console.log(myVar, (typeof myVar));
+let booleanVar = String(true);
+// console.log(booleanVar, (typeof booleanVar));
+
+let date = String(new Date());
+// console.log(date, (typeof date));
+
+let arr =  String([1,2,3,4,5]);
+// console.log(arr.length, (typeof arr));
+
+let i = 75;
+// console.log(i.toString())
+
+let stri = Number("3434");
+stri = Number("343d4");
+stri = Number(false);
+stri = Number([1,2,3,4,5,6,7,8,9]);
+// console.log(stri, (typeof stri));
+
+let number = parseFloat('34.098');
+
+
+console.log(number.toFixed(2), (typeof number));
+
+// Type coercion
+
+let mystr = Number("698");
+let mynum = 34;
+
+console.log(mystr + mynum);
+
+</script>
+</html>

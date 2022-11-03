@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading"> Welcome to Code With Harry</h1>
+        <div id="myfirst" class="child red good" id="first">child 1
+
+            <ul class="this">
+                <li class="childul">this</li>
+                <li class="childul">is</li>
+                <li class="childul">a</li>
+                <li class="childul">list </li>
+                <li class="childul">of my dreams</li>
+            </ul>
+        </div>
+        <div class="child">child 2</div>
+        <div class="child red">child 3</div>
+        <div class="child">child 4</div>
+        <form action="none.html" method="post">
+            <a href="//codewithharry.com">Go to Code With Harry</a>
+            <br>
+            <br>
+            Search this website: <input type="text" name="Hello" id="">
+            <input type="button" value="submit">
+        </form>
+    </div>
+    <br>
+    <div class="no">this is a dummy div1</div>
+    <div class="no">this is a dummy div2</div>
+    <div class="no">this is a dummy div3</div>
+</body>
+<!-- <script src="js/tut12.js"></script> -->
+<!-- <script src="js/tut14.js"></script> -->
+
+
+<script src="js/tut15.js">
+
+
+    console.log('this is tut 16');
+let element = document.createElement('li');             //create Element and with "createdElement(_Element_Name)" & Assigned to The "Varble"
+let text = document.createTextNode('I am a text node'); //You Can Use the mothod to Create a txt Node And Append It to any Element By Using appendChild(textNodeContainingVariable) Method Of The ELEMENT ;
+element.appendChild(text)
+
+// Add a class name to the li element
+element.className = 'childul';
+element.id = 'createdLi';
+element.setAttribute('title', 'mytitle');
+// element.innerText = '<b>Hello this is created by harry</b>';
+// element.innerHTML = '<b>Hello this is created by harry</b>';
+
+let ul = document.querySelector('ul.this');
+ul.appendChild(element);
+// console.log(ul)
+// console.log(element)
+
+let elem2 = document.createElement('h3');
+elem2.id = 'elem2';
+elem2.className = 'elem2';
+let tnode = document.createTextNode('This is a created node for elem2');
+elem2.appendChild(tnode);
+
+element.replaceWith(elem2);
+let myul = document.getElementById('myul');
+myul.replaceChild(element, document.getElementById('fui')); // method to replace the 2nd_argument_child with 1st One 
+myul.removeChild(document.getElementById('lui')); // pass the Variable in the "removeChild" method
+let pr = elem2.hasAttribute('href');              // returns (true/false); if The "Element" HAS Attribute!
+elem2.removeAttribute('id');
+elem2.setAttribute('title', 'myelem2title');      // first Argument is Attribute and 2nd One is The Value like: (href = "#")
+console.log(elem2, pr);
+
+// quick quiz
+// create a heading element with text as "Go to CodeWithHarry" and create an a tag outside it with href = "https://www.codewithharry.com"
+
+
+</script>
+</html>

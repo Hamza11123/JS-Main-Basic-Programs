@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling try Catch in javaScript</title>
+</head>
+<body>
+    <script>
+
+        // This is coming from servr as a response
+        let a = "harry Bhai..";
+
+        if(a == undefined)
+            throw new Error("this is not undefined"); // Throwing manually a custom Error 
+        else
+            console.log("this is undefined");
+
+        
+        try {
+                // If an Error Occurs in Try Body then, catch Block will Run
+
+                // ktheuhoeu();
+
+        } catch (error) {
+                console.log("Are You  okay");
+
+                console.log(error );        // Printing Error in Text-Form :)
+                console.log(error.name);    // Type Of the Error (Error-Name);
+                console.log(error.message); // Error Message !
+
+        } finally {
+                console.log("this will Always run! ");
+        }
+
+        
+
+    </script>
+</body>
+</html>

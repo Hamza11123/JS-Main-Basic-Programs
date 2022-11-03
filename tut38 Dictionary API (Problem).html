@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Api (Problem)</title>
+    
+</head>
+<body>
+    
+    <input id="inp" type="text" placeholder="Enter the word">
+    <button id="btn">Fetch Definition</button>
+    <div id="dict">
+
+    </div>
+</body>
+<script>
+    /*Problem:
+    1.you have pretend to Use a word-API which will contain an Object and you have to print definition
+    from all  the results of that word API. you 
+    2. u gotta print it in the dom
+    3. If you are using bootstrap  then its a plus*/
+    
+
+
+/*------------------------ Object Of words (will be used in the problem [From Sir Harry] ) ------------------------*/
+    const words = [
+        {word: "help", definition: "make it easier or possible for (someone) to do something by offering them one's services or resources." },
+        {word: "thank", definition: "express gratitude to (someone), especially by saying ‘Thank you’."},
+        {word: "sky", definition: "the region of the atmosphere and outer space seen from the earth"},
+        {word: "mountaine", definition: "a large natural elevation of the earth's surface rising abruptly from the surrounding level; a large steep hill."},
+        {word: "see", definition: "perceive with the eyes; discern visually."}
+    ]
+/*------------------------ Object Of words (will be used in the problem [From Sir Harry] ) ------------------------*/
+
+
+    // targetin' the inputTag and the button
+    let inputTag = document.getElementById("inp"); 
+    let div = document.getElementById("dict");
+    let btn = document.getElementById('btn');
+
+    btn.addEventListener('click', function(){
+        let inpVal = inputTag.value;
+
+        console.log(inpVal);
+
+        // Declarin' an empty string variable;
+        let str = "";
+
+        // loop For the Traversal Of [Array-Of-Objects]
+        for (let i = 0; i < words.length; i++) {
+
+            // element is nothing-but an 'Object' 
+            const element = words[i];
+
+            // if the inpVal(User-Entered-Word/Value) matches THAT "word" in OBJECT, PRINT ITS DEFINITION AND THE WORD TOO!!
+            if(element.word == inpVal){
+                console.log("Word:", element.word);
+                console.log("Definition:", element.definition);
+
+                // Storing the HTML elements in the Form of string in 'str';
+                str += `<div>Word: ${element.word}<br>Definition: ${element.definition}</div>`
+            } 
+        }
+
+        // Assigning the whole stored string in the "innerHTML" of "div";
+        div.innerHTML = str;
+    });
+    
+    // #Problem Solved! on my own :D
+
+
+</script>
+</html>

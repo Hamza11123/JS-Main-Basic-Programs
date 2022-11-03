@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    function returnPromise(){
+        return (new Promise(function(res, rej){
+            if(0){
+                res();
+            }
+            else{
+                rej();
+            }
+
+        }));
+    }
+
+    returnPromise().then(resolved).catch(rejected);
+    function resolved(){ // On-Promise Completed
+        console.log("I'm res, thanks for Resolving :)");
+    }
+    function rejected(){ // On-Promise Rejected
+        console.log("I'm rej, You are very bad :(");
+    }
+
+
+</script>
+</html>

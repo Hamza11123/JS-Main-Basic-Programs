@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .mapContainer{
+            height: 100vh;
+            width: 100vw;
+            /* background-image: linear-gradient(to top right,  rgba(0, 123, 253, 0.404), rgb(240, 240, 240));         */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe{
+            box-shadow: 0 5px 40px rgba(89, 89, 89, 0.46);
+        }
+        iframe:hover{
+            transition: all 0.6s;
+            transition-delay: 0.6s;
+            height: 98%;
+            width: 98%;
+        }
+        iframe:not(:hover){
+            transition: all 0.5s;
+            transition-delay: 0.2s;
+            animation: h 2.8s ease-in-out 0.2s infinite;
+        }
+
+        @keyframes h {
+            0%{ 
+               transform: translateY(0%);
+            }
+            50%{ 
+                transform: translateY(2%);
+            }
+            100%{         
+                transform: translateY(0%);
+               
+            }
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="mapContainer">
+        <!-- Getting API  -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7211.007186311568!2d68.34131924131594!3d25.354433434975437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c718231977123%3A0x62024591443be24d!2sHussaini%20Imam%20Bargah!5e0!3m2!1sen!2s!4v1645209259684!5m2!1sen!2s" width="55%" height="60%" style="border: none;"  allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    
+    <script>
+        /*--------------------- Comment Out This Section To Turn-Off The JS-Effects -------------------------*/
+        let mapContainer = document.getElementsByClassName("mapContainer")[0];
+        mapContainer.addEventListener("mousemove", (Event_Obj)=>{
+        mapContainer.style.backgroundColor = ` rgba(${Event_Obj.clientY}, ${Event_Obj.clientX + Event_Obj.clientY},  ${Event_Obj.clientY * Event_Obj.clientX}, 0.13)`;
+    }); 
+        
+    </script>
+</body>
+</html>

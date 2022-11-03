@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression MetaCharacters-Symbols</title>
+</head>
+<body style="background-color: black;">
+    
+</body>
+
+    <script>
+        // let regexe = new RegExp("Hamza.", "g"); // Another way of declaring a regular expression!
+
+        let regex = /Hamueuza/;
+        // let's Look some MetaCharacters Symbols
+        regex = /^H/; // ^ means -> "Starts-with ", expression will match if string starts with!
+        regex = /a$/ ; // $ at the end of the string means, "STring ends with"
+        regex = /Ha.za/; // matches Exactly anyone character  // "I'm Confused just a little bit"
+        regex = /Ha*za/; // matches 0 or more Characters  // "I'm Confused :("
+        regex = /Ha?m?za/; // ? Optional Meta Character, means-> 'a' Present ho Ya na ho..? chalygaa.. & similarly with 'm'
+
+        regex = /H\*mza/; // Now, Here is no Meta-Character, it is just a normal '*'(Asterik); 
+
+        let str = "Hza";  
+
+        let result = regex.exec(str);
+        console.log("result is From exec is", result);
+
+        if(regex.test(str))
+            console.log("THe  String  " + str, "matches the expression",  regex.source );   
+        else
+            console.log("not matched");
+
+
+
+    </script>
+</html>

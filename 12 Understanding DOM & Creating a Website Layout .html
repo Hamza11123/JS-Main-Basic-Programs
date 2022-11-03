@@ -1,0 +1,54 @@
+<!-- the reference of the Code Related to "DOM manipulation":
+
+link here: https://www.codewithharry.com/videos/javascript-tutorials-in-hindi-12 -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding "DOM" And Creating Website Layout:: 12</title>
+</head>
+<body>
+
+    <div id="container">
+        <div class="child">child-1</div>
+        <div class="child">child-2</div>
+        <div class="child">child-3</div>
+        <div class="child">child-4</div>
+    </div>
+</body>
+
+    <script>
+
+        let a;
+        a = window.document;
+
+        a = window.document.all; // After applyin' "all" method the document will be shown in the form of "Array like structure"(Element By Element) or (HTML Collection)
+
+        a = window.document.body; //
+
+        console.log(a);
+
+
+        console.log('Welcome to tut 12.js');
+let a = document;
+a = document.all;
+// a = document.body;
+// a = document.forms[0];
+// Array.from(a).forEach(function(element){
+//     console.log(element);
+// })
+a = document.links[0];
+// use document.images and document.scripts and print the list of images and scripts on an html page
+console.log(a);
+
+
+
+    </script>
+
+
+</html>

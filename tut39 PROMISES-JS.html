@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in Js</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        // Promise: Best Video on Promises
+        
+        // if someone makes promises then 3 possibilities mayB happen 
+        // 1.  Resolve -> Poora krdiyaa
+        // 2.  Reject -> TorDiyaa
+        // 3.  Pending-> During or in-Process
+        
+        
+        
+        /*---------------------------- Configuring The Object ----------------------------*/
+        function func1(){
+
+            // The State, when the Promise is Executing called "Pending-State"
+            return new Promise(function(resolve, reject){
+                setTimeout(() => {
+
+                    const error =  false;
+                    if(error){    
+
+                        console.log("Function: Your Promise Has been Resolved :)");
+                        
+                        // Calling The callBack-Function
+                        resolve();
+                    }
+                    else{
+
+                       console.log("Your Promise has been Rejected :("); 
+
+                       // Calling the callback-Function
+                       reject('sorry not fullFilled'); 
+                    }
+                    
+                }, 1000);
+            }); 
+        }
+        /*---------------------------- Configuring The Object ----------------------------*/
+
+
+
+        /*------------ Decision what to do, after making PROMISE -------------*/
+
+        func1().then(function(){  // This is the Resolved Function Definition!
+            console.log("Hamza: thanks for Resolving! :)");
+            
+        }).catch(function(str){  // This is the Reject Function Definition!
+            console.log("REason:",str, ", Hamza: Very Bad bro :| You Reject my promise, You are a Liar!");
+            
+        });
+        /*------------ Decision what to do, after making PROMISE -------------*/
+
+    </script>
+</html>

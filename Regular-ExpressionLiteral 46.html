@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Experssion Literal</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #flexP{
+            height: 42rem;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 100;
+        }
+        form{
+            display: flex;
+            flex-flow: column wrap;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius :6px;
+            height: 18rem;
+            width: 26rem;
+            box-shadow: rgba(112, 112, 112, .4) 1px 1px 10px ;
+        }
+        
+        input{
+            font-weight: lighter;
+            border: 1px solid rgb(230, 228, 228);
+            height: 3rem;
+            padding: 2px 8px;
+            font-size: 1.2rem ;
+            margin: 10px;
+            border-radius: 4px;
+        }
+        
+        #s{
+            color: white;
+            border-radius: 8px;
+            background-color: #1877F2;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- faceBook Login Clone -->
+    <div id="flexP">
+
+        <div class="flexC">
+            <img src="" alt=""> <!-- Soon...-->
+        </div>
+
+
+        <div class="flexC">
+            <form action="">
+                <input type="email" placeholder="Email address or phone number">
+                <input type="password" placeholder="Password">
+                <input id="s" type="submit" value="Log In">
+            </form>
+        </div>
+
+    </div>
+</body>
+
+<!-- Refernce Code FRom Self Writng -->
+<script>
+
+
+    /*-------------------- Regular-Expression Used To Search The String -------------------*/ 
+        let reg = /tu/;
+        // reg = /The/g;  // flag - 'g' (Will Search The Whole "String"--Globally ) 
+        // reg = /Th/i ;     // flag - 'i' (Case In-Sensitive)-> [Capital and Small Letters Are Equal, & it will Search Equally]
+        console.log(reg.source) // returns Data in the RegularExpressionLiteral;
+        
+        let str = "this is a The cute String !!";
+        
+        /*--------- 1.Function to match expressions ------------*/
+        // 1. .exec() - This func. will return  an array  for match or null for no match
+        // Returns -> 'null', if not matched! to control The Loops... :)
+        
+        let result = reg.exec(str); // returns Array..
+        
+        result = reg.exec(str).index; // returns Index Where It is Matched!
+        
+        result = reg.exec(str).input; // Returs Input Str As an Argument!
+
+        
+        /*--------------- 2.Function  to test, if String Is Matche or Not --------------*/
+        let result2 = reg.test(str);  // Returns "true" if Matched and false if doesn't matched
+        // console.log(result);
+
+        /*-----------------3.Function, It will return An (ARRAY Of Results or Null) ----------------*/
+        let result3 = str.match(reg);
+        // console.log(result);
+
+
+        /*------------- 4.Function, Returns Index of first match else -1 ---------------*/
+        let result4 = str.search(reg); 
+        console.log(result4);
+        
+        
+    /*-------------------- Regular-Expression Used To Search The String -------------------*/
+</script>
+
+
+
+<!-- Refrence Code From Harry Bhai -->
+<!--
+<script>
+        console.log("This is tutorial 46");
+        let reg = /harry/; // This is a regular expression literal in js
+        reg = /harry/g; // g means global
+        // reg = /harry/i; // i means case insensitive
+
+        // console.log(reg);
+        // console.log(reg.source);
+
+        let s = "This is great code with harry and also harry bhai";
+        // Functions to match expressions
+        // 1. exec() - This function will return an array for match or null for no match
+        let result = reg.exec(s);
+        // result = reg.exec(s);
+        // console.log(result);
+        // result = reg.exec(s);
+        // console.log(result); -> We can use multiple exec with global flag
+
+        // if (result) {
+        //     console.log(result);
+        //     console.log(result.input);
+        //     console.log(result.index);
+        // }
+
+        // 2. test() - Returns true or false
+        let result2 = reg.test(s);
+        // console.log(result2); -> This will only print true if the "reg" is there in the string "s"
+
+        // 3. match() - It will return an array of results or null
+        // let result3 = reg.match(s) -> This is wrong!!
+        let result3 = s.match(reg) // -> This is right
+        // console.log(result3);
+
+        // 4. search() - Returns index of first match else -1
+        // let result4 = reg.search(s) -> This is wrong!!
+        let result4 = s.search(reg) // -> This is right
+        // console.log(result4);
+
+        // 5. replace() - Returns new replaced string with all the replacements (if no flag is given, first match will be replaced)
+
+        let result5 = s.replace(reg, 'SHUBHAM');
+        console.log(result5);
+</script>
+-->
+</html>

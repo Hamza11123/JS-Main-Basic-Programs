@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Library{
+        constructor(givenBookList){
+            this.bookList = givenBookList;
+            this.issuedBookList_Obj = {}; // will store the data of (user : book) relation, & now this is empty
+        }
+        getBookList() {
+            for (const Property in this.issuedBookList_Obj) {
+                if (Object.hasOwnProperty.call(this.issuedBookList_Obj, Property)) {
+                    const Value = this.issuedBookList_Obj[Property];
+                    console.log(Property+':',Value )
+                }
+            }
+        }
+        issueBook(User, BookName) {
+            this.issuedBookList_Obj[BookName] = User;
+        }   
+        returnBook_to_the_User(User, BookName) {
+
+            console.log(BookName, "is Returned From", User);
+            delete this.issuedBookList_Obj.BookName;
+        }
+    }
+
+    const L = new Library(["youtube", "youtubeuu", "uhohu"]);
+    L.issueBook("Hamza", "DataScience");
+    // L.returnBook_to_the_User("Hamza", "DataScience")
+    L.getBookList()
+</script>
+</html>

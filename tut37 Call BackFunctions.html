@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="students">
+        <h1>Students List</h1>
+        <ul id="studentsList">
+            <!-- <li></li> -->
+        </ul>
+    </div>
+</body>
+
+<script>
+    /*-------- Sequence-Array of Objects -------------*/
+    let students = [
+        {name:"hamza", fatherName:"Jawaid", subject: "computer"},
+        {name:"Rohan", fatherName:"Das", subject: "programming"},
+        {name:"Ali", fatherName:"Azkar-Ahmad", subject: "computer"},
+        {name:"Abdullah", fatherName:"Zahid", subject: "programming"},
+        {name:"Ahsan", fatherName:"Shahid", subject: "programming"}
+    ];
+    /*-------- Sequence-Array of Objects -------------*/
+    
+
+    /*--------------- Function To Enroll-New-Student (By Pushin' the Object Into Students' Array) ---------------*/
+    function enrollStudents(student, callbBackFunction_WillControlTheFlowOfFunctionCalling) { // We can Pass The Whole [FUNCTION] :|, As an Argument that function is called "CallBackFunction";
+        setTimeout(function() {
+            // Pushin' a-new-student Object in the "students"(Array-Of-Objs)
+            students.push(student);
+            console.log(student.name,"has Enrolled!");
+            callbBackFunction_WillControlTheFlowOfFunctionCalling(); // After Enrolling/Pushin' Calling "getStudents()" Function, With The Help Of CALLBACKFUNCTION;
+        }, 3000);
+    }
+    /*--------------- Function To Enroll-New-Student (By Pushin' the Object Into Students' Array) ---------------*/
+
+
+    /*----------------- Printing Enrolled-Students Into DOM -------------------*/
+    function getStudents() {
+        setTimeout(function() {
+            // Populatin' Into DOM by Appending A bunch Of Li's in 'str' as an String; and assigned into 'ul';
+            let str = ``;
+            // "students" an Array-Of-Objects :)
+            students.forEach((studentObj)=>{
+                str += `<li>${studentObj.name}</li>`;
+            });
+            document.getElementById("studentsList").innerHTML=str ;
+            console.log("Students haev been fetced");
+        }, 1000);
+    }
+    /*----------------- Printing Enrolled-Students Into DOM -------------------*/
+    
+
+
+    // Creating An Object Of a new Student, the obj. is holding all the Data About the Student..
+    let newStudent = {name: "AbdullahGhulam", fatherName: "Ghulam-Muhammad", Subject: "Machine-Learning And Data-Science"};
+    
+    // Passing A Function as an Argument, 'getStudents' Print All the Enrolled-Students by using 'forEach' Loop! :)
+    enrollStudents(newStudent, getStudents); 
+    
+    
+    
+</script>
+</html>

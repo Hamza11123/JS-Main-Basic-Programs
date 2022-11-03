@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex- shorthand character classes</title>
+</head>
+<body>
+    
+</body>
+
+<!-- continue soon.. from heree -->
+<script>
+    let regex =  /\wa/ // word character , - , _ & Alphabetic or Numbers
+    regex = /\w+m/; // \w+ means, one more word characters
+
+    str = "Hamza is Hamza";
+    let results = regex.exec(str);
+    console.log(results);
+    
+    if(regex.test(str)){
+        console.log(`regex = ${regex.source} matches the string ${str}`);
+    }
+    else
+        console.log("Sorry not matched :(");;</script>
+</html>

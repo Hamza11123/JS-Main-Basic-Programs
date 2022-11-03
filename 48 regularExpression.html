@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>More on... Regular Expressions 48 -> (Character-Sets)</title>
+    </head>
+    <body style="background-color: black;">
+        
+    </body>
+    <script>
+        // Regular Expression
+        // Basics functions
+        // Meta Chars
+
+
+        // Character-Sets - []
+        let regex = /H[aty]mza/; // Only these Characters can be Matched 'a', 't', & y;
+        regex = /H[a-z]mza/; // Only [A to Z] can be Matched!
+        regex = /H[^aty]ma/; // except these: 'a', 't', & 'y' "All Can Match   "
+        regex = /H[a-zA-Z]m[sz1-9]a/; // [First Small/Capital Alphabets Are Allowed] and [small s, z & (1 to 9)] Are Also Allowed!!
+
+
+        // Quantifiers
+        regex = /Hamz{2}a/; // 'z' character can be occured exactly 2 times to be matched with string;
+        regex =  /Ham{1,3}za/; // 'm' char can be occured exactly 1 to 3-(Range) times in the strin' to match it;
+
+
+        // Groupings- We'll use parenthesis for groupings ()
+        regex = /(Hamza){2}/; // Now the Same concept for a 'single-character' can be applied for a "STring" By using (Parenthesis'-Grouping)
+
+
+        str = "Hamzaamza ";
+
+
+        let result = regex.exec(str);
+        console.log("result is From exec is", result);
+
+        if(regex.test(str))
+            console.log("THe  String  " + str, "matches the expression",  regex.source );   
+        else
+            console.log("not matched");
+
+
+        
+        
+    </script>
+
+</html>

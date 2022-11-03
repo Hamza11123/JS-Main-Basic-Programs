@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+
+
+
+        <div class="container">
+            <h1 id="heading"> Welcome to Code With Harry</h1>
+            <div id="myfirst" class="child red good" id="first">child 1
+    
+                <ul class="this">
+                    <li class="childul">this</li>
+                    <li class="childul">is</li>
+                    <li class="childul">a</li>
+                    <li class="childul">list </li>
+                    <li class="childul">of my dreams</li>
+                </ul>
+            </div>
+            <div class="child">child 2</div>
+            <div class="child red">child 3</div>
+            <div class="child">child 4</div>
+            <form action="none.html" method="post">
+                <a href="//codewithharry.com">Go to Code With Harry</a>
+                <br>
+                <br>
+                Search this website: <input type="text" name="Hello" id="">
+                <input type="button" value="submit">
+            </form>
+        </div>
+        <br>
+        <div class="no">this is a dummy div1</div>
+        <div class="no">this is a dummy div2</div>
+        <div class="no">this is a dummy div3</div>
+
+
+
+    </body>
+    <!-- <script src="js/tut12.js"></script> -->
+    <!-- <script src="js/tut14.js"></script> -->
+    <script src="js/tut15.js">
+
+
+console.log('Welcome to tutorial 15');
+
+let cont = document.querySelector('.no');
+cont = document.querySelector('.container');
+let nodeName = cont.childNodes[1].nodeName;
+let nodeType = cont.childNodes[1].nodeType;
+// console.log(nodeName)
+// console.log(nodeType)
+// Node types
+// 1. Element
+// 2. Attribute
+// 3. Text Node
+// 8. Comment
+// 9. document
+// 10. docType
+
+// console.log(cont.childNodes);    
+// console.log(cont.children);
+
+let container = document.querySelector('div.container');
+
+// console.log(container.children[1].children[0].children);
+
+// console.log(container.firstChild);
+// console.log(container.firstElementChild); //    it Wan't Includes Comments, Text, New-line Char, BlaBlaBla...
+
+// console.log(container.lastChild);
+// console.log(container.lastElementChild); //it Won't Includes Comments, Text, New-line Char, BlaBlaBla...
+
+// console.log(container.children);
+// console.log(container.childElementCount); // Count of child elements
+
+console.log(container.firstElementChild.parentNode); // FirstElementChild Ka Khud .container (Parent)!!
+console.log(container.firstElementChild.nextSibling); 
+console.log(container.firstElementChild.nextElementSibling); // FirstElementChil ka Agla Bhai Or Element ("Jiska PArent Bhi .container ho")
+console.log(container.firstElementChild.nextElementSibling.nextElementSibling);
+
+
+
+
+    </script>
+    </html>
+    
