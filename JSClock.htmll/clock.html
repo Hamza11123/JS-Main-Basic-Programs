@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="showDate"></title>
+    <style>
+        html{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 6rem;
+            color: rgb(223, 225, 233);
+            background-color: rgb(9, 13, 39);
+        }
+        body{
+            cursor: pointer     ;
+            height: 80vh;
+            width:96%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body:hover{
+            
+            transition: all 0.6s ;
+            transform:rotate(360deg);
+            
+            /* transform: skew(50%, 5%); */
+            font-size: 2rem;
+        }
+       
+        </style>
+    
+</head>
+<hamza>
+    <body class="showDate">
+        <!-- <a href="https://10fastfingers.com/typing-test/english"><img src="http://img.10fastfingers.com/badge/typing-test_1_CB.png" alt="Typing Test" /></a><p>Visit the <a href="https://10fastfingers.com/typing-test/english">Typing Test</a> and try!</p>     -->
+    </body>
+
+</hamza>
+<script>
+
+    
+    const Show_LiveTime = ()=>{
+        
+    // getting Live date From The "Date" Obj;
+    let date = new Date();
+    hours = date.getHours()
+    minutes = date.getMinutes()
+    secs = date.getSeconds()
+    milli_Secs = date.getMilliseconds()
+    
+    session = "PM";
+
+
+    if(hours < 12){
+        session = "AM";
+    }
+    if(hours > 12){
+        hours = (hours - 12);
+    }
+    
+    // Handling Zero Before a Single Digit 
+    hours = (hours < 10) ? `${'0'+hours}`: hours;
+    minutes = (minutes < 10) ? `${'0'+minutes}`: minutes ;
+    secs = (secs < 10) ? '0'+secs : secs ;
+    // milli_Secs = (milli_Secs < 10) ? '0'+milli_Secs : milli_Secs ;
+
+    
+    
+    
+    
+    // Assigning to DOM
+    wholeTimeString = `${hours }:${minutes}:${secs} ${session}`;
+    for (let i = 0; i <= 1; i++) 
+        document.getElementsByClassName('showDate')[i].innerHTML = wholeTimeString;
+    
+    
+    // Recursing The Function Again and Again For Infinite Interval After Every "0.5ms" Using "timeOUt Function"
+    setTimeout(() => {
+        Show_LiveTime   ();
+    }, 0.5);
+}
+
+Show_LiveTime();
+
+</script>
+</html>

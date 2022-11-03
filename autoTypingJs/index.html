@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto typing </title>
+    <style>
+        *{
+            box-sizing: border-box;
+            background: black;
+            color: #fff;
+        }
+
+        .cont{
+            height:20rem;
+            width:40rem;    
+            border:1px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            border-right: 1px solid white;
+            animation: B 0.4s ease  infinite forwards;
+        }
+        @keyframes B {
+            0%{
+                border-right:transparent;
+            }
+            80%{
+                border-right: 1px solid white;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+        <div class="cont">
+            <h1></h1>
+        </div>
+</body>
+
+    <script>
+        let h1  = document.getElementsByTagName('h1')[0];
+        let str = ['Hamza is the best boy in the world! :)'];
+
+        let i=0;
+        function type(index){
+            if(index < str[0].length)
+            {
+                h1.innerHTML += str[0][index];
+                console.log(index);
+                setTimeout(() => {
+                        type(index + 1);
+                }, 35);
+            }
+            else
+                return;
+        }
+
+        let str2 = "Hamza is the best boy in the world! :)";
+        function del(lengthOfTheString){
+            if(lengthOfTheString  == -1) return ;
+
+            else{
+                h1.innerHTML = ''
+                for(let i=0; i< lengthOfTheString; i++){
+                    h1.innerHTML += str2[i]; 
+                }
+                setTimeout(() => {
+                    del(lengthOfTheString - 1);
+
+                }, 30);
+            }
+        }
+
+        setTimeout(() => {
+            
+            type(0); // pass starting 'index' of the string 
+        }, 6000);
+        del(str2.length);   // pass ending 'index' of the string
+        
+        
+
+    </script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COvid -19 </title>
+
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #map{
+                width: 100vw;
+                height: 100vh;
+                
+            }
+        </style>
+</head>
+<body style="background-color: black;">
+
+    <div id="map" ></div>
+
+</body >
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaGFtemF1ZXR1aHQzNCIsImEiOiJja3lvaDJ1YjMwMDJ1MnZtdnoyaHQyM3I0In0.-KCsOHmE7SoKXns5-xLujA';
+    const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/dark-v10', // style URL
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+    });
+</script>
+
+
+    <script>
+        function updateMap(){
+
+            fetch("c.json")
+            .then(response => response.json())
+            .then(rsp => {
+                console.log(rsp);
+            });
+
+        }
+
+    updateMap(); 
+
+        
+
+    </script>
+</html> 

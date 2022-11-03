@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .activeBtn{
+            background: red;
+        }
+        .activeContent{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+    </div>
+    <div class="content">
+        <div id="Home"  class="contentConts">
+            <h2>Home</h2>
+            <p>Lorem ipsu Lorem ipsum rro aliquid, aliquam quisquam voluptatem odit cupiditate repellat. m, dolor sit amet consectetur adipisicing elit. Illo, exercitationem laborum. Numquam error nesciunt doloribus aperiam accusamus voluptatum facilis commodi.</p>
+        </div>
+        <div id="Explore" class="contentConts">
+            <h2>Explore</h2>
+            <p>Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni provident fugiat qui voluptatem facilis magnam. Perspiciatis quasi maxime consectetur dolore. ipsum, dolor sit amet consectetur adipisicing elit. Illo, exercitationem laborum. Numquam error nesciunt doloribus aperiam accusamus voluptatum facilis commodi.</p>
+        </div>
+        <div id="Learn" class="contentConts">
+            <h2>Learn</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, exercitationem laborum. Numquam error nesciunt doloribus aperiam accusamus voluptatum facilis commodi.</p>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let  btns = Array.from(document.getElementsByTagName('button'));
+    let  contentConts = Array.from(document.getElementsByClassName('contentConts'));
+    
+    btns.forEach((btn, index) => {
+        btn.addEventListener('click', ()=>{
+            btns.forEach(element => {
+                element.style.background = 'white';
+            });
+            contentConts.forEach(element => {
+                element.style.display = 'none';
+            });
+            
+            contentConts[index].style.display = "block";
+            btns[index].style.background = " red";
+        })
+    });
+    btns[0].click();
+</script>
+</html>

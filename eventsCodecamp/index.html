@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS </title>
+    <style>
+        *{
+            background-color: rgba(176, 49, 2, 0.303);
+            padding: 44px;
+            margin: 44px;
+        }
+        
+    </style>
+</head>
+<body>
+    <H1>Hey there..!</H1>    
+</body>
+
+<script>
+    
+    // if this is 'true', from [HTML-ELement], all the elements would be [clicked](if those have Events-Defined) to the [Targeted-Element], also the [Targetted-Element] would be Clicked [In-Last]
+    document.getElementsByTagName('h1')[0].addEventListener("click", async ()=> {
+        await console.log('h1 was clicked')
+    }, 1);
+    
+    document.getElementsByTagName('body')[0].addEventListener("click", async ()=> {
+        await console.log('body was clicked')
+    }, 1);
+    
+    document.getElementsByTagName('html')[0].addEventListener("click", async ()=> {
+        await console.log('html was clicked')
+    }, 1);
+    
+    // if this is 'false'(by-default), from [Targetted-ELement], all the elements would be [clicked](if those have Events-Defined) to the [Targeted-Element], also the [HTML-Element] would be Clicked [In-Last]
+    document.getElementsByTagName('h1')[0].addEventListener("click", async ()=> {
+        await console.log('h1 was clicked')
+    }, 0);
+
+    document.getElementsByTagName('body')[0].addEventListener("click", async ()=> {
+        await console.log('body was clicked')
+    }, 0);
+
+    document.getElementsByTagName('html')[0].addEventListener("click", async ()=> {
+        await console.log('html was clicked')
+    }, 0);
+</script>
+</html>

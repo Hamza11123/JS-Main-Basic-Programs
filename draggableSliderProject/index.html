@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider-Draggable</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+        background-color: #0e0e0e;
+    }
+
+    .sliderCont {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 300px;
+        overflow: hidden;
+        cursor: grab;
+    }
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr); /*we have 10 imgs so repeat 10 times 1 fr*/
+        column-gap: 2rem;
+        pointer-events: none;
+    }
+    .sliderItem {
+        width: 300px;
+        height: 100%;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        user-select: none;
+    }
+            
+    </style>
+</head>
+<body>
+    <div class="sliderCont">
+        <div class="slider">
+            
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+            <div class="sliderItem"><img src="4.jpg" alt=""></div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    const sliderContainer = document.querySelector('.sliderCont');
+    const slider = document.querySelector('.slider');
+
+    let clicked = false;
+    let xAxis;
+    let x;
+
+    sliderContainer.addEventListener('mouseup', () => {
+        sliderContainer.style.cursor = `grab`;
+    }) 
+    sliderContainer.addEventListener('mousedown', e => {
+        clicked = true
+        xAxis = e.offsetX - slider.offsetLeft;
+        // tells the current position
+
+        sliderContainer.style.cursor = `grabbing`
+    })
+
+    window.addEventListener('mouseup', () => {
+        clicked = false
+    })
+
+    sliderContainer.addEventListener('mousemove', e => {
+        if (!clicked) return;
+        e.preventDefault();
+
+        x = e.offsetX;
+        slider.style.left = `${x - xAxis}px`;
+        // but we dont want it to scroll forever
+
+        checkSize()
+    })
+
+    function checkSize () {
+        let sliderContainerOut = sliderContainer.getBoundingClientRect();
+        let sliderIn = slider.getBoundingClientRect();
+
+        if (parseInt(slider.style.left) > 0) {
+            slider.style.left = `0px`;
+        } else if (sliderIn.right < sliderContainerOut.right) {
+            slider.style.left = `-${sliderIn.width - sliderContainerOut.width}px`
+        }
+    }
+    
+</script>
+</html>

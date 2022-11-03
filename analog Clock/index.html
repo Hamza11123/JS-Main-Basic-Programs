@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .clockCont{
+            position: relative;
+            background-color: red;
+            width: 50vw;
+            height: 90vh;
+            margin: auto;
+        }
+        #h{
+            height: 14vh;
+            width: 1%;
+            background: black;
+            position: absolute;
+            top: 27vh;
+            left: 59.6vh;
+            /* transform: rotate(60deg); */
+        }
+        #m{
+            height: 18vh;
+            width: 0.7%;
+            background: black;
+            position: absolute;
+            top:25vh;
+            left: 59.8vh;
+            /* transform: rotate(90deg); */
+        }
+        #s{
+            /* transform: rotate(30deg); */
+            height: 22vh;
+            width: 0.4%;
+            background: rgb(0, 195, 255);
+            position: absolute;
+            top: 23vh;
+            left: 60vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="clockCont">
+        <div id="h"></div>
+        <div id="m"></div>
+        <div id="s"></div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>

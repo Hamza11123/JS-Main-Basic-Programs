@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .clockCont{
+            background: red;
+            height: 50vh;
+            width: 70vw;
+        }
+        #h{
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 9vh;
+            width: 1vw;
+        }
+        #m{
+            background: rgb(0, 255, 4);
+            position: absolute;
+            top: 10vh;
+            left: 0;
+            height: 7vh;
+            width: 1vw;
+        }
+        #s{
+            background: rgb(0, 13, 255);
+            position: absolute;
+            top: 20vh;
+            left: 0;
+            height: 4vh;
+            width: 1vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="clockCont">
+        <div id="h"></div>
+        <div id="m"></div>
+        <div id="s"></div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>

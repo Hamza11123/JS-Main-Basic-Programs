@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODALS</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: rgb(204, 204, 204);
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+        }#container{
+            transition: all 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0; left: 0;
+            height: 100vh; width: 100vw;
+            
+            background: rgba(0, 0, 0, 0.396);
+
+            
+
+
+        }
+        .HideAndShowModalToggle{
+            pointer-events: none;
+            opacity: 0;
+        }
+        #Modal{
+            background: white;
+            padding: 0.6rem;
+            width: 600px;
+
+            max-width: 100%;
+            border-radius: 20px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button id="Open">Click me</button>
+    <div id="container" class="HideAndShowModalToggle" >
+        <div id="Modal">
+            <h1>Hey there </h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, excepturi?</p>
+            <button id="Close">Close</button>
+        </div>
+
+    </div>
+</body>
+<script>
+    const modalContainer = document.getElementById("container");
+    const closeModal = document.getElementById("Close");
+    const openModal = document.getElementById("Open");
+
+    openModal.onclick = ()=>{
+        modalContainer.classList.remove("HideAndShowModalToggle");
+        console.log('first')
+    }
+    closeModal.onclick = ()=>{
+        modalContainer.classList.add("HideAndShowModalToggle");
+        console.log('object');
+    }
+</script>
+</html>

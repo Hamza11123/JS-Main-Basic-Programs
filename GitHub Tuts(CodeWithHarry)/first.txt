@@ -1,0 +1,3 @@
+this is version one of the project
+
+I just wanna go to commit 2
