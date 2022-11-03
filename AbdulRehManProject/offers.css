@@ -1,0 +1,23 @@
+.offers {
+    min-height: 40rem;
+    background: #f7f7f7;
+}
+
+.offers .mW {
+    width: 100%;
+    height: 35rem;
+}
+
+.offers .flxRowItem1 {
+    /* background-color: rgb(255, 10, 10); */
+    /* padding: 4rem 0 0 0; */
+    color: black;
+    max-width: 32rem;
+    height: 23rem;
+}
+
+.offers .flxRowItem2 {
+    background: url('./img/ice2.jpg') no-repeat center center/cover;
+    height: 20rem;
+    width: 20rem;
+}

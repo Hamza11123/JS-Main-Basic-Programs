@@ -1,0 +1,68 @@
+:root {
+    --main: rgb(255, 187, 0);
+}
+
+nav.navBar {
+    padding: 1.8rem 2.6rem;
+    border-bottom: 1px solid rgba(224, 216, 144, 0.5);
+}
+
+nav.navBar ul {
+    gap: 2.8rem;
+}
+
+.home .homeContent {
+    padding: 8rem 0rem 0 0rem;
+    max-width: 100%;
+}
+
+span {
+    color: var(--main);
+    font-family: 'Water Brush';
+}
+
+.home .homeContent h2 {
+    margin-bottom: 3.2rem;
+}
+
+.home .homeContent h2 span {
+    font-size: 1.4rem;
+}
+
+.home .homeContent h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+}
+
+.home .homeContent p {
+    max-width: 34rem;
+    margin-bottom: 2.8rem;
+}
+
+.home .homeContent button {
+    padding: 0.84rem 1.6rem;
+    margin-right: 1.2rem;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    border-radius: 1.8%;
+}
+
+.home .homeContent button.b1 {
+    color: black;
+    background: var(--main);
+}
+
+.home .homeContent button.b2 {
+    color: #fff;
+    background: none;
+    padding: 0.76rem 1.6rem;
+    border: 2px dashed var(--main);
+}
+
+/*----------- Offers styling Section ------------*/
+.offers .flxRowItem2 {
+    background: url('./img/ice2.jpg') no-repeat center center/cover;
+    height: 20rem;
+    width: 20rem;
+}

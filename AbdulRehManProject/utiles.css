@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&family=Water+Brush&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    /* font-size: 1.14rem; */
+    color: rgba(255, 255, 255, 0.979);
+    font-family: "Roboto";
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.mW {
+    max-width: 74.4rem;
+
+}
+
+.flexRow {
+    display: flex;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.cB {
+    color: #000;
+}
+
+.cW {
+    color: #fff;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.justifySpaceBetween {
+    justify-content: space-between;
+}
+
+.justifySpaceAround {
+    justify-content: space-around;
+}
+
+.mA {
+    margin: auto;
+}
+
+.alignStart {
+    align-items: flex-start;
+}
+
+.justifyStart {
+    justify-content: flex-start;
+}
